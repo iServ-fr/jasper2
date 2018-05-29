@@ -1,12 +1,12 @@
-ghost:
-  username: ghost
-  name: Ghost
-  url_full: http://jekyller.github.io/jasper2/
-  url: jekyller.github.io/jasper2
+vfleurette:
+  username: vfleurette
+  name: Vincent Fleurette
+  url_full: https://alpineplanet.com
+  url: alpineplanet.com
   bio: The professional publishing platform
   picture: assets/images/ghost.png
-  facebook: ghost
-  twitter: tryghost
+  facebook: False
+  twitter: vincfleurette
   cover: False
 hannah:
   username: hannah
