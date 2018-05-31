@@ -4,17 +4,17 @@ vfleurette:
   url_full: https://alpineplanet.com
   url: alpineplanet.com
   bio: The professional publishing platform
-  picture: content/images/2017/11/SSF3Z4GN_400x400.jpg
+  picture: assets/images/2017/11/SSF3Z4GN_400x400.jpg
   facebook: False
   twitter: vincfleurette
-  cover: content/images/5a54ab106da70.jpg
+  cover: assets/images/5a54ab106da70.jpg
 schaptal:
   username: schaptal
   name: Sébastien Chaptal
   url_full: https://iserv.fr/
   url: iserv.fr
   bio:
-  picture: content/images/2018/05/photoseb.jpg
+  picture: assets/images/2018/05/photoseb.jpg
   facebook: False
   twitter: False
   cover: False
