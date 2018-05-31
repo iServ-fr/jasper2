@@ -10,9 +10,9 @@ baseurl: /jasper2/
 # Website info
 title: iServ
 description: The professional publishing platform
-cover: content/images/blog-cover.jpg
-logo: content/images/blog-icon.png
-logo_dark: assets/images/favicon.png
+cover: content/images/2018/02/iMacProWallpaper.jpg
+logo: content/images/2018/02/iServ_w-1.png
+logo_dark: content/images/2018/02/iServ_w-1.png
 favicon: content/images/favicon.png
 production_url: https://iserv-fr.github.io/
 source_url: https://github.com/iServ-fr/jasper2

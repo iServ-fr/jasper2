@@ -1,17 +1,29 @@
 ---
 layout: page
-current: about
-title: About
+current: a-propos
+title: A propos
 navigation: true
 logo: 'assets/images/ghost.png'
 class: page-template
 subclass: 'post page'
 ---
 
-Ghost is professional publishing platform designed for modern journalism. This is a demo site of a basic Ghost install to give you a general sense of what a new Ghost site looks like when set up for the first time.
+Quelques mots, avant que vous ne partiez à l'assaut de nos articles.
 
-> If you'd like to set up a site like this for yourself, head over to [Ghost.org](https://ghost.org/) and start a free 14 day trial to give Ghost a try!
+A l'origine, Vincent a décidé de créer iServ pour partager ses trouvailles, ses expérimentations avec l'administration système qu'il a découvert lors des son expérience professionnelle. 
+Il s'est décidé à poster des articles (même si c'était à un rythme très irrégulier, dixit Vincent himself).
 
-If you're a developer: Ghost is a completely open source (MIT) Node.js application built on a JSON API with an Ember.js admin client. It works with MySQL and SQLite, and is publicly available [on Github](https://github.com/TryGhost/ghost).
+Ici vous trouverez des passionnés de nouvelles technologies.
+Et notre passion, nous la partageons.
+A travers des [tutos](https://iserv.fr/tag/tuto/), des [découvertes](https://iserv.fr/tag/decouverte/), et aussi en vous partageant la vie de [ce serveur](https://iserv.fr/tag/iserv/).
 
-If you need help with using Ghost, you'll find a ton of useful articles on [our knowledgebase](https://help.ghost.org/), as well as extensive [developer documentation](https://docs.ghost.org/).
+Nous vous invitons à regarder assez souvent cette page car notre ligne éditoriale évoluera dans les prochains mois.
+
+Même s'il y a eu et qu'il y aura encore des évolutions, la fondation reste la même,
+iServ, un blog de geek en fonction des pérégrinations de notre équipe.
+
+    Bonne lecture !
+
+Membre de la TeamBlogMTP : les blogueurs de la région Montpelliéraine.
+Du partage, des rencontres, des événements, des apéros, des bons plans ...
+TeamBlogMTP
