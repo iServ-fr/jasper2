@@ -18,6 +18,10 @@ $(document).ready(function () {
     var lastWindowHeight = window.innerHeight;
     var lastDocumentHeight = $(document).height();
     var ticking = false;
+    $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
+
 
     function onScroll() {
         lastScrollY = window.scrollY;
