@@ -1,9 +1,15 @@
 ---
-layout: post
 title: Désactiver Bonjour sur Cyberduck
 date: '2017-06-02 07:59:00'
 tags:
 - tuto
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Si vous utilisez [Cyberduck](https://cyberduck.io/) sur le réseau local de votre société, IUT ou Université, vous ne savez peut-être pas que [Cyberduck](https://cyberduck.io/) ouvre le protocole de communication Bonjour.

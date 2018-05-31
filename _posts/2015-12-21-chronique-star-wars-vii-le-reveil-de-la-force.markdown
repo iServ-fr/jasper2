@@ -1,9 +1,15 @@
 ---
-layout: post
 title: Chronique Star Wars VII Le Réveil de la Force
 date: '2015-12-21 08:52:00'
 tags:
 - cinema
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 _Cette critique est garantie sans spoils de ce dernier épisode._

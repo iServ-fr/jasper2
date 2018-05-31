@@ -1,9 +1,15 @@
 ---
-layout: post
 title: Smartmockups, des maquettes à votre image en deux clics
 date: '2016-03-04 13:25:00'
 tags:
 - decouverte
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 ## Présentation de Smartmockups

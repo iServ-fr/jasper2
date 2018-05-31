@@ -1,9 +1,15 @@
 ---
-layout: post
 title: DROWN, une nouvelle faille pour OpenSSL
 date: '2016-03-02 17:12:00'
 tags:
 - sysadmin
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 ### Résumé

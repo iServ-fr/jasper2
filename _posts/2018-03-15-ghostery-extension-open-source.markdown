@@ -5,6 +5,12 @@ date: '2018-03-15 19:45:10'
 tags:
 - decouverte
 - opensource
+navigation: True
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 Ghostery, une extension pour navigateur web qui empêche le tracking de votre navigation sur le web, a ouvert son code source.

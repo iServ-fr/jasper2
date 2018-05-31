@@ -1,9 +1,15 @@
 ---
-layout: post
 title: Un point sur l'iphone 7 avant le keynote de mercredi
 date: '2016-09-16 07:56:00'
 tags:
 - apple
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 A la veille de l'annonce du nouveau téléphone d’Apple alias iPhone 7, voici ce que le web laisse fuiter. Si tout ne se révélera pas forcement juste, tout ce qui suit a suffisamment fuité pour être crédible. 

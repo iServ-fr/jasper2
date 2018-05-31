@@ -1,11 +1,17 @@
 ---
-layout: post
 title: Bonjour Ghost
 date: '2015-05-10 10:13:00'
 tags:
 - sysadmin
 - iserv
 - cms
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Pour motoriser ce site, j’ai décidé d’abandonner Jekyll, qui pourtant, m’a rendu un grand service. Jekyll, c’est un véritable bonheur à utiliser, je l’ai découvert grâce à la *[sheevaboite](https://www.sheevaboite.fr/)*, un très bon site sur l’auto hebergement.

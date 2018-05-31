@@ -1,10 +1,16 @@
 ---
-layout: post
 title: Twitter en ligne de commande sous Linux
 date: '2016-05-25 11:13:00'
 tags:
 - sysadmin
 - decouverte
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Avec cet article, je vais vous montrer comment accéder à Twitter en ligne de commande. Il ne manque pas de clients Twitter disponibles, différents en termes de fonctionnalités etc. Si vous êtes un de ces fous de ligne de commande, il y en a un un pour vous aussi.

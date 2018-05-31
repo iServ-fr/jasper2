@@ -4,6 +4,12 @@ title: Neutralité du net, les terminaux
 date: '2018-05-02 17:30:00'
 tags:
 - societe
+navigation: True
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 L’ARCEP met en garde contre l'accès limité à internet qu'offrent les smartphones, tablettes et assistants vocaux dans son rapport de février 2018. Pourquoi l’autorité des télécoms s’attaque aux terminaux ? Parce qu’elle est la garante de la neutralité du net et qu’elle considère les terminaux comme des opérateurs, les uns comme les autres conditionnant l’accès aux contenus et services.

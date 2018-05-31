@@ -5,6 +5,12 @@ title: 'History’s Creed: histoire et jeux vidéo, pour le meilleur ou pour le 
 date: '2018-03-11 20:00:00'
 tags:
 - societe
+navigation: True
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 Aujourd'hui, un article un peu différent. En effet, il s'agit d'un partenariat entre Arte Creative et le vulgarisateur/youtubeur en Histoire, [Nota Bene](https://www.youtube.com/user/notabenemovies).

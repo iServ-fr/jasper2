@@ -5,6 +5,12 @@ date: '2018-03-18 21:33:36'
 tags:
 - decouverte
 - cms
+navigation: True
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 

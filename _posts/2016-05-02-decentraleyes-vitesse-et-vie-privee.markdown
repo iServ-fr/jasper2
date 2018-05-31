@@ -1,7 +1,13 @@
 ---
-layout: post
 title: 'Decentraleyes : vitesse et vie privée'
 date: '2016-05-02 16:27:00'
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 ## Decentraleyes : vitesse et vie privée une extension pour firefox

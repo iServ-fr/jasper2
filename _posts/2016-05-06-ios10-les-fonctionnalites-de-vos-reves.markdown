@@ -1,7 +1,13 @@
 ---
-layout: post
 title: iOS10, les fonctionnalités de vos rêves
 date: '2016-05-06 16:50:00'
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Afin de mettre en images ses attentes les plus viables concernant iOS10, un journaliste du site MacStories a fait appel à un designer pour réaliser une vidéo de leur liste de vœux regroupant les fonctionnalités les plus attendues d'iOS10, l'OS mobile d'Apple qui sera présenté dans moins d'un mois maintenant.

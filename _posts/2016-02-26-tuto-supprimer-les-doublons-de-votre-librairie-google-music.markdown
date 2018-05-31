@@ -1,9 +1,15 @@
 ---
-layout: post
 title: "[Tuto] Supprimer les doublons de votre librairie Google Music"
 date: '2016-02-26 15:15:00'
 tags:
 - tuto
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 J'aime bien Google Music, c'est l'un des seuls services google que j'utilise avec Gmaps. J'ai utilisé leur outil pour transférer ma bibliothèque iTunes (Oui iTunes marche plutôt bien sur Mac.. pas sous windows). Google Music a un double intérêt. Je peux avoir ma musique partout sans avoir mon propre ordi et également de sauvegarde en plus de la  time machine. Cependant, je n'aime pas le Google Music Uploader : il n'est pas assez intelligent pour reconnaître quand une chanson de votre bibliothèque est déjà dans le nuage, donc si jamais vous devez reconfirer l'outil, vous aurez des centaines ou même des milliers de chansons en double. Et jusqu'à ce qu'un ingénieur de Google décide de fixer le problème, vous êtes coincé avec une bibliothèque en désordre et une expérience utilisateur dégradée.

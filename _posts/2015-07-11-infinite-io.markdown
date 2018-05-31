@@ -1,9 +1,15 @@
 ---
-layout: post
 title: infinite.io
 date: '2015-07-11 09:54:00'
 tags:
 - decouverte
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Aujourd’hui je souhaite vous présenter **infinit.io** un outil d’échange de fichier P2P.

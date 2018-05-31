@@ -1,10 +1,16 @@
 ---
-layout: post
 title: Big !bang avec DuckDuckGo pour iServ
 date: '2016-04-29 09:25:00'
 tags:
 - decouverte
 - iserv
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 J'aime bien le moteur de recherche [DuckDuckGo](https://duckduckgo.com "Visiter https://duckduckgo.com/ (le lien s'ouvrira dans une nouvelle fenêtre)") et sa fonctionalité !**bang**, bien pratique et moins curieux que Google; DuckDuckGo peut en outre être défini comme moteur de recherche par défaut sur Safari iOS et OS X. [Qwant](https://www.qwant.com "Visiter https://www.qwant.com/ (le lien s'ouvrira dans une nouvelle fenêtre)") également mérite le détour.

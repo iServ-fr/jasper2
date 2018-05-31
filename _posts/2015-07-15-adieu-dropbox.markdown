@@ -1,7 +1,13 @@
 ---
-layout: post
 title: Adieu Dropbox !
 date: '2015-07-15 11:36:00'
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Depuis 2007, Dropbox est devenue l’une des références de la sauvegarde pour les particuliers et du partage de fichiers. Après des années d’utilisation, je n’ai pas été déçu par le logiciel Dropbox mais plutôt par sa politique américaine et par le fait que mes données personnelles soient stockées sur des serveurs américains. Donc adieu Dropbox… pour mes données, je ne suis plus dépendant de dropbox pour partager mes données dans le cadre de mon master maintenant que j’ai réussi :-).

@@ -1,9 +1,15 @@
 ---
-layout: post
 title: Ready for HTTP2 with Nginx on Centos 7
 date: '2015-12-11 16:20:00'
 tags:
 - sysadmin
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 ## Qu’est-ce que HTTP2 ?

@@ -1,10 +1,16 @@
 ---
-layout: post
 title: Rediriger uniquement la racine de son site sous Apache
 date: '2018-02-22 16:17:23'
 tags:
 - sysadmin
 - apache
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 Il est parfois necessaire de faire des redirections pour ses sites web. Il y  quelques cas communs comme le changement d'url d'une page d'un de vos sites ou un changement de nom de domaine. Mais comment rediriger seulement la racine de son site web ?

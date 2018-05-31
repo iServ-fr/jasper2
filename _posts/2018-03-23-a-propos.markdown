@@ -2,6 +2,12 @@
 layout: post
 title: À propos
 date: '2018-03-23 09:55:17'
+navigation: True
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 Quelques mots, avant que vous ne partiez à l'assaut de nos articles.

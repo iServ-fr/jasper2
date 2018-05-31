@@ -1,9 +1,15 @@
 ---
-layout: post
 title: Ramme, un client Instagram open source et multiplateforme
 date: '2016-04-09 08:02:00'
 tags:
 - decouverte
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 [Ramme](https://github.com/terkelg/ramme) est un nouveau client Instagram de bureau qui a la particularité d'être open source et multiplateforme. Créé avec le framework Electron, il permet de « liker » et commenter les photos de ses contacts, chercher du contenu et modifier son profil. Ramme est un nouveau client Instagram de bureau qui a la particularité d'être open source et multiplateforme. Créé avec le framework Electron, il permet de « liker » et commenter les photos de ses contacts, chercher du contenu et modifier son profil.

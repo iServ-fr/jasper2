@@ -1,9 +1,15 @@
 ---
-layout: post
 title: Météo mondiale dans votre terminal \ Tuto pour Linux/Mac
 date: '2016-02-18 14:40:00'
 tags:
 - decouverte
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 ## Les prévisions météo s’affichent aussi dans le terminal

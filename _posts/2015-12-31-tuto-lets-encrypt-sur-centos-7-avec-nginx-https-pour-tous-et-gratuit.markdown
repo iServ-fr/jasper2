@@ -1,11 +1,17 @@
 ---
-layout: post
 title: Tuto Let's Encrypt sur Centos 7 avec Nginx, Https pour tous et gratuit !
 date: '2015-12-31 13:04:00'
 tags:
 - sysadmin
 - tuto
 - opensource
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Voici un tuto pour Let's Encrypt qui est actuellement en version bêta publique et vous pouvez obtenir des certificats SSL valides et vérifiés pour vos domaines, gratuitement pour une durée de vie. Je sais que, même si je n'y ai pas cru la première fois, c'est vrai. C'est gratuit et libre.

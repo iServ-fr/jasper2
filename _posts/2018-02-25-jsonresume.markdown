@@ -1,10 +1,15 @@
 ---
-layout: post
 title: JSON Resume ou comment résumer sa vie en Json
 date: '2018-02-25 13:40:33'
 tags:
 - decouverte
 - opensource
+navigation: True
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 Vous voulez faire un CV sans avoir à utiliser word ou un autre logiciel de traitement de texte ? Vous voulez pouvoir réutiliser vos informations sur un autre cv sans avoir à tout recommencer ? Alors JSON Resume va vous  intéresser.

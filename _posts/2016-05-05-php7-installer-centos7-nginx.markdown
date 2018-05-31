@@ -1,10 +1,16 @@
 ---
-layout: post
 title: 'PHP7 : Comment l''installer sur Centos7 et nginx'
 date: '2016-05-05 15:45:00'
 tags:
 - php
 - sysadmin
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Bonjour à tous, le tutoriel de cette semaine portera sur l'installation de **PHP7** sur **CentOS7**  avec **php-fpm**.

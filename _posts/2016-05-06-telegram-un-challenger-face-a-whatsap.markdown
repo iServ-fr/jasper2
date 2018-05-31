@@ -1,9 +1,15 @@
 ---
-layout: post
 title: Telegram un challenger face à WhatsAp
 date: '2016-05-06 08:25:00'
 tags:
 - decouverte
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 **Telegram** est un système de messagerie instantané principalement axé sur le respect de la vie privée et la disponibilité multi-plateforme. Il existe des clients télégramme pour les smartphones (Android, iOS, Windows Phone) et les systèmes (Windows, OS X, Linux).

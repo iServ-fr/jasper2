@@ -1,9 +1,15 @@
 ---
-layout: post
 title: Nouvelle année 2015
 date: '2015-01-01 10:26:00'
 tags:
 - iserv
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Le site *iServ.fr* a fêté ses 1 an avec ma totale … indifférence. En fait, j’ai tout simplement oublié la date de création…

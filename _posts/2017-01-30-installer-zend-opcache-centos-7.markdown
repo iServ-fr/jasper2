@@ -1,11 +1,17 @@
 ---
-layout: post
 title: Installer Zend OPcache sur CentOS 7
 date: '2017-01-30 11:04:00'
 tags:
 - php
 - sysadmin
 - tuto
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Zend OPcache accélère l'exécution de code PHP. Comment?

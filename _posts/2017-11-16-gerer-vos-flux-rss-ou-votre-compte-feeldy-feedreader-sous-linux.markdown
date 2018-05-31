@@ -1,11 +1,17 @@
 ---
-layout: post
 title: Gérer vos Flux RSS ou votre Compte Feeldy, Feedreader sous Linux
 featured: true
 date: '2017-11-16 10:08:19'
 tags:
 - tuto
 - decouverte
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Une de mes applications préférées sous Mac est Reeder. Jusqu'à présent je n'avais pas encore trouvé d’équivalent sous Linux avec une interface sexy et qui se synchronise avec un service RSS auto-hébergé ou non. Et puis j'ai découvert FeedReader. Si vous êtes un fan de la lecture des blogs et un grand consommateur de flux RSS, alors FeedReader est une très belle application pour organiser et gérer hors de votre fil de news. Il est compatible avec :

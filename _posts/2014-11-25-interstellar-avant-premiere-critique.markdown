@@ -1,18 +1,14 @@
 ---
-layout: post
-current: post
-cover: assets/images/water.jpg
-navigation: True
 title: Interstellar avant-première critique
 date: '2014-11-25 09:55:00'
 tags:
 - cinema
+navigation: True
 layout: post
 current: post
 cover: content/images/water.jpg
 navigation: True
 class: post-template
-logo: content/images/iServ.png
 author: vfleurette
 ---
 

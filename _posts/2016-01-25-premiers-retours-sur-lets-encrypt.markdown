@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Premiers retours sur Let's Encrypt
 date: '2016-01-25 13:33:00'
 tags:
@@ -7,6 +6,13 @@ tags:
 - tuto
 - iserv
 - opensource
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Suite à mon précédent article : [Tuto Let’s Encrypt sur  Centos 7 avec Nginx](https://iserv.fr/tuto-lets-encrypt-sur-centos-7-avec-nginx-https-pour-tous-et-gratuit/) voici mes premiers retours sur Let's Encrypt.

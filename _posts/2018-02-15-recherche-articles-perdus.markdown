@@ -1,10 +1,16 @@
 ---
-layout: post
 title: A la recherche des articles perdus - Ghost
 date: '2018-02-15 10:31:00'
 tags:
 - iserv
 - cms
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 Bonjour à tous, 

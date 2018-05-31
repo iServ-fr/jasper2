@@ -1,9 +1,15 @@
 ---
-layout: post
 title: iPhone 7 sera annoncé le 7 septembre à 19h
 date: '2016-08-29 12:51:00'
 tags:
 - decouverte
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 A vos calendriers, les gens, c'est officiel. Apple invite la presse à son prochain événement le 7 Septembre au Bill Graham Civic Center à San Francisco à 10 heures (19h pour nous). Elle devrait dévoiler les nouveaux iPhone 7 et pourrait dévoiler de nouveaux MacBook Pros ainsi que  la v2 de l'Applewatch lors de ce même événement.

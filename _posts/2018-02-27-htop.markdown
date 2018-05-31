@@ -7,6 +7,12 @@ tags:
 - sysadmin
 - decouverte
 - opensource
+navigation: True
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 Htop est un moniteur système pour les systèmes d’exploitation type Unix très similaire à top, qui fonctionne comme lui en mode Terminal, mais qui dispose d'un environnement en mode texte plus convivial (et coloré) que ce dernier. Il est programmé en C à l'aide de la bibliothèque ncurses.

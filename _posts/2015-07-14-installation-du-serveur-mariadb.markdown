@@ -1,10 +1,16 @@
 ---
-layout: post
 title: Installation du serveur MariaDB
 date: '2015-07-14 11:28:00'
 tags:
 - sysadmin
 - tuto
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 #### Tuto MariaDB : Installation du serveur MariaDB via la commande suivante

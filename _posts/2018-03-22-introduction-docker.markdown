@@ -5,6 +5,12 @@ date: '2018-03-22 11:00:00'
 tags:
 - sysadmin
 - decouverte
+navigation: True
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 Bonjour à tous, aujourd'hui nous parlons d'une technologie en vogue, Docker. Que vous soyez développeurs, administrateurs systèmes ou DSI, vous avez certainement entendu parler de Docker. C'est une technologie qui nous interesse et que nous allons étudier un plus intensemment ces prochaines semaines. C'est pour ça que nous en parlons aujourd'hui :)

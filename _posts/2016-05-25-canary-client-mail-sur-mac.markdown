@@ -1,9 +1,15 @@
 ---
-layout: post
 title: Canary, un nouveau client mail sur mac complet en Beta
 date: '2016-05-25 08:52:00'
 tags:
 - decouverte
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Canary est un nouveau client mail sur Mac. D'autres clients mails en apportent plus, d'autres font le minimum. Canary semble très complet mais propose une belle interface qui sait rester simple.

@@ -5,6 +5,12 @@ date: '2018-03-08 13:27:16'
 tags:
 - sysadmin
 - tuto
+navigation: True
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 Il est probable que dans votre vie d'informaticien, vous devrez étudier des fichiers de logs, qu'ils viennent du système ou de vos applications. 

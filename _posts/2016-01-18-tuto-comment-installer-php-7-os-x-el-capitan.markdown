@@ -1,11 +1,17 @@
 ---
-layout: post
 title: Tuto Comment installer PHP 7 OS X El Capitan
 featured: true
 date: '2016-01-18 08:57:00'
 tags:
 - php
 - tuto
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 

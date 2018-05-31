@@ -5,6 +5,12 @@ title: Hyperconnectés, hyperaliénés ? (émission Interception du dimanche 18 
 date: '2018-03-02 12:00:00'
 tags:
 - societe
+navigation: True
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 Les réseaux sociaux sont devenus de véritables machines de guerre qui analysent vos likes et scrutent vos opinions à des fins commerciales ou politiques. Alors que la législation sur le sujet tarde à se mettre en place, une prise de conscience semble timidement se dessiner dans la société.

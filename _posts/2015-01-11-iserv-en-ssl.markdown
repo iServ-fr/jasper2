@@ -1,9 +1,15 @@
 ---
-layout: post
 title: iServ en SSL
 date: '2015-01-11 11:17:00'
 tags:
 - iserv
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Le site iServ.fr est accessible de manière sécurisé avec le protocole **HTTPS**. Ce n’est pas parce que je suis un féru de sécurité mais parce que j’avais envie d’apprendre.

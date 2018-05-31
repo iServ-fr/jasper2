@@ -5,6 +5,12 @@ date: '2018-04-13 17:00:00'
 tags:
 - php
 - tuto
+navigation: True
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 Comme beaucoup, vous avez du déjà voir passer le mot "redis", au moins dans des articles ou dans des réunions avec des adminsys. Redis est un système de gestion de base de données clef-valeur scalable, très hautes performances, écrit en C ANSI et distribué sous licence BSD.

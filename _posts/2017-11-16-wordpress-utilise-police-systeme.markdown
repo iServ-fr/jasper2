@@ -1,9 +1,15 @@
 ---
-layout: post
 title: WordPress utilise les polices systeme et c'est une bonne chose
 date: '2017-11-16 10:24:27'
 tags:
 - cms
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 WordPress 4.6 a été mis à disposition cette semaine. Cette mise à jour est relativement petite mais apporte tout de même son lot de correctifs avec un bonus. En effet, l’administration de votre Wordpress utilise à présent la [police de caractère principale de votre OS](https://make.wordpress.org/core/2016/07/07/native-fonts-in-4-6/). Cela n'implique pas un gros changement mais vous noterez peut-être une différence malgré tout et c'est visuellement plus confortable. La police utilisée précédemment dans l’administration était Open Sans.

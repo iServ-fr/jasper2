@@ -6,6 +6,12 @@ tags:
 - tuto
 - decouverte
 - securite
+navigation: True
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 Ajourd'hui, un article sur git et les commits (encore ?!).

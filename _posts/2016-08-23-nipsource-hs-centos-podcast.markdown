@@ -1,10 +1,16 @@
 ---
-layout: post
 title: 'Nipsource HS: CentOS podcast'
 date: '2016-08-23 14:00:00'
 tags:
 - sysadmin
 - opensource
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 ### Un podcast audio autour de la distribution Centos qui fait vivre ce serveur.

@@ -1,7 +1,13 @@
 ---
-layout: post
 title: Cookies et vie privée
 date: '2017-11-16 10:17:56'
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 J'essaie de faire attention à ma vie privée lorsque je surf sur internet, j'utilise ublock et vous devriez probablement en faire autant…

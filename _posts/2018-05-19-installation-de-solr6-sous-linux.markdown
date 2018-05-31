@@ -4,6 +4,12 @@ title: Installation de SolR 6 sous CentOS
 date: '2018-05-19 18:49:59'
 tags:
 - tuto
+navigation: True
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 J'ai souvent utilisé le moteur d'indexation SolR (basé sur lucene) que ce soit pour mes développements ou en production. Nous allons installer la version 6 de SolR et en faire un service, pour que SolR soit plus facilement gérable en ligne de commande.

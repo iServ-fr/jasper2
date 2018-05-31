@@ -1,9 +1,15 @@
 ---
-layout: post
 title: Re-design
 date: '2015-05-01 10:12:00'
 tags:
 - iserv
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Bienvenue, sur le nouveau design de mon blog *iServ.fr*.

@@ -4,6 +4,12 @@ title: Tig, ta nouvelle interface git en ligne de commande
 date: '2018-04-05 20:02:00'
 tags:
 - decouverte
+navigation: True
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: schaptal
 ---
 
 Vous avez votre projet sous git, vous avez peu à peu construit votre projet, au fur et à mesure des commits ou alors vous avez récupéré un projet git existant sur une plateforme, ouverte ou non, comme github, gitlab, bitbucket, etc.

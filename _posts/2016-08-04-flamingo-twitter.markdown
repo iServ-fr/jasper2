@@ -1,9 +1,15 @@
 ---
-layout: post
 title: 'Flamingo : un magnifique client Twitter pour Android (payant)'
 date: '2016-08-04 08:16:00'
 tags:
 - decouverte
+navigation: True
+layout: post
+current: post
+cover: content/images/water.jpg
+navigation: True
+class: post-template
+author: vfleurette
 ---
 
 Flamingo est une application Twitter pour Android vraiment magnifique. Le client officiel et ses publicités envahissantes vous énerves ? 
