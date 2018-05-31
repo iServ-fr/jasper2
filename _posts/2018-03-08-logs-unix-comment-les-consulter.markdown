@@ -7,7 +7,7 @@ tags:
 - tuto
 navigation: True
 current: post
-cover: assets/images/water.jpg
+cover: assets/images/2018/03/symfony-log.jpg
 navigation: True
 class: post-template
 author: schaptal

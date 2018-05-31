@@ -7,7 +7,7 @@ tags:
 - decouverte
 navigation: True
 current: post
-cover: assets/images/water.jpg
+cover: assets/images/2018/03/Docker-cover.png
 navigation: True
 class: post-template
 author: schaptal

@@ -8,7 +8,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: assets/images/water.jpg
+cover: assets/images/2017/11/Screenshot2-1.png
 navigation: True
 class: post-template
 author: vfleurette

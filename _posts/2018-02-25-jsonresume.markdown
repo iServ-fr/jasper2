@@ -6,7 +6,7 @@ tags:
 - opensource
 navigation: True
 current: post
-cover: assets/images/water.jpg
+cover: assets/images/2018/02/jsonresume.png
 navigation: True
 class: post-template
 author: schaptal

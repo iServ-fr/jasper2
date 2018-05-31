@@ -8,7 +8,7 @@ tags:
 - securite
 navigation: True
 current: post
-cover: assets/images/water.jpg
+cover: assets/images/2018/04/headGPG.jpg
 navigation: True
 class: post-template
 author: schaptal

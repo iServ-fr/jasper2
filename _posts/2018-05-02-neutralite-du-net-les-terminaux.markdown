@@ -6,7 +6,7 @@ tags:
 - societe
 navigation: True
 current: post
-cover: assets/images/water.jpg
+cover: https://images.unsplash.com/1/iphone-4-closeup.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=de39dac7596d6afda9bc0fbcd20bf7a8
 navigation: True
 class: post-template
 author: schaptal

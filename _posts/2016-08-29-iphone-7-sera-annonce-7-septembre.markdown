@@ -6,7 +6,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: assets/images/water.jpg
+cover: assets/images/2018/02/September-7-Apple-Media-Event-Wallpaper-Apple-Invite-Mac.png
 navigation: True
 class: post-template
 author: vfleurette

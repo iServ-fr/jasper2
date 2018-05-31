@@ -7,7 +7,7 @@ tags:
 - cms
 navigation: True
 current: post
-cover: assets/images/water.jpg
+cover: assets/images/2018/03/localbyflywheel.png
 navigation: True
 class: post-template
 author: schaptal

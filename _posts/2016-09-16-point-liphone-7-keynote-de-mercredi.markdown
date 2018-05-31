@@ -6,7 +6,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: assets/images/water.jpg
+cover: assets/images/2018/02/apple-1699197_1920.png
 navigation: True
 class: post-template
 author: vfleurette

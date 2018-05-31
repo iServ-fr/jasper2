@@ -7,7 +7,7 @@ tags:
 - tuto
 navigation: True
 current: post
-cover: assets/images/water.jpg
+cover: assets/images/2018/04/symfony-rds.jpg
 navigation: True
 class: post-template
 author: schaptal

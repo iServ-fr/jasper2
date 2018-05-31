@@ -4,7 +4,7 @@ date: '2016-08-23 08:05:00'
 navigation: True
 layout: post
 current: post
-cover: assets/images/water.jpg
+cover: assets/images/2018/02/http2.jpg
 navigation: True
 class: post-template
 author: vfleurette

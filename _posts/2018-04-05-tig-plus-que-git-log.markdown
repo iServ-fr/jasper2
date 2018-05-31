@@ -6,7 +6,7 @@ tags:
 - decouverte
 navigation: True
 current: post
-cover: assets/images/water.jpg
+cover: assets/images/2018/03/tigFirst-1.jpg
 navigation: True
 class: post-template
 author: schaptal
