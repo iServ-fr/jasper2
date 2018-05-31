@@ -1,0 +1,18 @@
+---
+layout: post
+title: Re-design
+date: '2015-05-01 10:12:00'
+tags:
+- iserv
+---
+
+Bienvenue, sur le nouveau design de mon blog *iServ.fr*.
+
+Avec ce nouveau thème, je veux toujours un site lisible, axé sur le contenu, sans imposer de choix techniques à mes lecteurs, bref j’ai axé le nouveau thème sur les points suivants :
+
++ Légèreté, rapidité d’affichage,
++ Facilité de lecture,
++ Mobile-friendly,
++ Pas de JavaScript (sauf pour mes stats),
+
+Je pense avoir atteint cet objectif, le site est encore plus léger, même s’il me reste quelques petites optimisations techniques à faire avant que cela soit parfait.

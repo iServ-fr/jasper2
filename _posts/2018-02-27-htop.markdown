@@ -1,0 +1,91 @@
+---
+layout: post
+title: HTOP, le monitoring en couleurs
+featured: true
+date: '2018-02-27 22:02:57'
+tags:
+- sysadmin
+- decouverte
+- opensource
+---
+
+Htop est un moniteur système pour les systèmes d’exploitation type Unix très similaire à top, qui fonctionne comme lui en mode Terminal, mais qui dispose d'un environnement en mode texte plus convivial (et coloré) que ce dernier. Il est programmé en C à l'aide de la bibliothèque ncurses.
+
+J'ai découvert Htop après avoir utilisé comme beaucoup, Top, et surtout les commandes comme `ps -aux | grep "tonservicequiplanteuh"` pour trouver des processus.
+Du coup, la découverte de htop a changé une partie de mes habitudes pour faire de l'admin sys (par exemple, c'est la première commande que je lance quand je me connecte à un serveur).
+
+
+## Installation
+
+Htop est disponible sur les distributions linux et sur macOS.
+
+###### Sur Debian et Ubuntu:
+`sudo apt-get install htop`
+
+###### Sur CentOS et Fedora:
+`yum install htop`
+`dnf install htop` [On Fedora 22+ releases]
+
+###### Sur MacOSX:
+Vous allez avoir besoin de brew pour installer htop sur MacOS
+`brew install htop`
+
+Une fois installé, il suffit de taper la commande `htop` pour le lancer.
+A noter que si vous le lancez en sudo, vous pourrez lister les processus de tous les utilisateurs et interagir avec eux.
+
+De plus, si vous souhaitez voir les processus d'un utilisateur en particulier (par exemple *apache*), il suffit d'utiliser l'option -u (pour user).
+`htop -u apache`
+
+## Interface
+
+Nous voici maintenant dans htop avec plein de processus et des nombres interessants (ah oui et contrairement à *top*, il y a ... des couleurs, oui des COULEURS). Et, on peut selectionner un processus à la souris.
+
+![htopGlobal](/content/images/2018/02/htopGlobal.png)
+*Quand je vous disais que ça marche aussi sous Mac*
+
+L'interface se divise en 2 parties:
+
+
+#### Monitoring global
+![headerHtop](/content/images/2018/02/headerHtop.jpg)
+
+L’en-tête est elle même coupée en deux. Sur le coté gauche, on a l'utilisation des différents coeurs (processeurs) et la mémoire utilisée, ainsi que la mémoire virtuelle paginée (swap). 
+La partie droite indique quant à elle le nombre de tâches actives et de threads, la durée de fonctionnement du système (« Uptime ») ainsi que la charge moyenne (« Load average ») du système durant les dernières 1, 5 et 15 minutes.
+
+#### la liste des process
+![htopBody](/content/images/2018/02/htopBody.jpg)
+
+La seconde partie liste la liste des processus et ses informations associées (le numéro de processus, le nom de l’utilisateur qui a lancé les processus, le pourcentage de cpu ou de mémoire utilisé, etc).
+
+## Fonctionnalités
+
+![htopMenu](/content/images/2018/02/htopMenu.png)
+
+Une barre en bas récapitule les fonctionnalités de Htop accessible via les touches de fonction allant de F1 à F10. De plus, c'est dans cette barre que vous pourrez taper des mots pour le filtrage ou la recherche.
+* F1: help (raccourci `h`)
+* F2: Setup pour configurer l'affichage d'Htop (raccourci `s`)
+* F3: recherche sur le nom du processus. Si celui ci est trouvé, il est surligné. Si il y en a plusieurs, htop ne surligne que le premier (raccourci `/`)
+* F4: comme la recherche mais n'affichera plus que le processus renvoyé (raccourci `|`)
+* F5: permet d'afficher les processus sous forme d'arbre ou de manière linéaire (raccourci `t`)
+* F6: permet de choisir le critère de classement des processus (raccourci `>`)
+* F7 et F8: permet de prioriser un processus. Celui-ci sera affiché avec un -1 (en rouge) ou un +1 (en vert). L'action est cumulable. Enfin, on peut le faire seulement si on a lancé htop en sudo. (raccourci `[` , `]`)
+* F9: permet d'envoyer un signal à un processus, le SIGKILL (9) étant le plus connu mais c'est loin d'être le seul (raccourci `k`)
+* F10: pour quitter htop (raccourci `q`)
+
+**D'autres raisons d'utiliser Htop**:
+
+* Vous pouvez scroller verticalement pour voir tous les processus et horizontalement pour voir les commandes en entier 
+* Htop démarre beaucoup plus vite que top (et je vous dit pas si vous avez un problème sur un serveur de prod, le coup de stress que vous vous prenez quand tout va lentement)
+* Vous pouvez tuer plus d'un process et cela sans connaitre leurs PID.
+* la priorisation des process de manière simple
+* Le truc en plus que j'ai découvert en écrivant cet article: le raccourci clavier `e` qui affiche les variables d'environnement pour un processus :)
+
+[Site](https://hisham.hm/htop/) et dépot [git](https://github.com/hishamhm/htop) d'Htop
+
+### Bibliographie:
+
+* Visualiser et gérer les processus sous Linux avec HTOP, 
+IT-Connect [en ligne], 2012 - 2018 [consulté le 26 février 2018]. Disponible sur : https://www.it-connect.fr/visualiser-et-gerer-les-processus-sous-linux-avec-htop/
+* Install Htop 2.0 – Linux Process Monitoring for RHEL, CentOS & Fedora, Techmint [en ligne], 2016 - 2017 [consulté le 22 février 2018]. Disponible sur : https://www.tecmint.com/install-htop-linux-process-monitoring-for-rhel-centos-fedora/
+* HTOP : Visualiser et gérer facilement les processus lancés sous linux, ChristianSueur.com [en ligne], 8/01/2017 [consulté le 25 février 2018]. Disponible sur : https://christiansueur.com/htop-visualiser-et-gerer-facilement-les-processus-lances-sous-linux/
+* htop, debian-facile [en ligne],  2009 - 2015 [consulté le 25 février 2018]. Disponible sur: https://debian-facile.org/doc:systeme:htop
