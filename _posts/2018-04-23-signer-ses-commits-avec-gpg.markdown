@@ -8,7 +8,7 @@ tags:
 - securite
 navigation: True
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: schaptal
@@ -20,14 +20,14 @@ Mais une jolie signature voyons.
 
 Imaginez (oui, je sais ce n'est pas facile, surtout si vous lisez cet article de bon matin), vous flanez sur github, vous tombez sur un projet qui vous interesse, vous regardez les commits et sur l'un d'entre eux, vous voyez ça:
 
-![verifiedcommit](/content/images/2018/04/verifiedcommit.png)
+![verifiedcommit](/assets/images/2018/04/verifiedcommit.png)
 
 Alors là deux réactions possibles:
 
-![meh](/content/images/2018/04/meh.jpeg)
+![meh](/assets/images/2018/04/meh.jpeg)
 
 ou si vous êtes comme moi
-![gloriousImg](/content/images/2018/04/gloriousImg.jpeg)
+![gloriousImg](/assets/images/2018/04/gloriousImg.jpeg)
 
 Si vous êtes dans la première réaction et bien comment dire, hmm, je ne pense pas que le reste de l'article va vous intérresser (et surtout, vous n'avez pas vraiment lu le titre de l'article non ... allez je suis sympa, voila un lien vers [les joies du code](https://lesjoiesducode.fr), c'est cadeau et ça fait toujours plaisir).
 Pour les autres, c'est parti ;)

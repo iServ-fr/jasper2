@@ -6,7 +6,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: vfleurette
@@ -16,11 +16,11 @@ A vos calendriers, les gens, c'est officiel. Apple invite la presse à son pro
 
 Les nouveaux iPhones devraient disposer d' un design très similaire à l'iPhone 6s et iPhone 6s Plus. Les deux modèles attendus vont gagner un CPU plus rapide ( A10 ) et abandonner les 16 Go pour les modèles d'entrée de gamme à la faveur de 32GB, le changement le plus spectaculaire sera probablement pour l'iPhone 7 Plus et pas l'iPhone de 4,7" : un système de double caméra. Cela pourrait être utilisé pour émuler un zoom optique où le zoom numérique.
 
-Les deux iPhone 7 sont attendus avec une couleur plus foncée. L'iPhone 7 devrait être disponible dans une [couleur bleu foncé](https://translate.googleusercontent.com/translate_c?depth=1&hl=fr&ie=UTF8&prev=_t&rurl=translate.google.fr&sl=auto&tl=fr&u=https://9to5mac.com/2016/06/13/deep-blue-iphone-7/&usg=ALkJrhhgbqZUUhfjxt6g2b10o9tgOrWELg) ou même un "peut-être" noir.
+Les deux iPhone 7 sont attendus avec une couleur plus foncée. L'iPhone 7 devrait être disponible dans une [couleur bleu foncé](https://translate.googleuserassets.com/translate_c?depth=1&hl=fr&ie=UTF8&prev=_t&rurl=translate.google.fr&sl=auto&tl=fr&u=https://9to5mac.com/2016/06/13/deep-blue-iphone-7/&usg=ALkJrhhgbqZUUhfjxt6g2b10o9tgOrWELg) ou même un "peut-être" noir.
 
 Comme vous pouvez le remarquer dans la photo ci-dessous, Apple va supprimer la prise casque 3,5 mm sur les deux 7 modèles iPhone et laisser place au Bluetooth et l'AirPlay audio.
 
-![iPhone 7](/content/images/2018/02/space-black.png)
+![iPhone 7](/assets/images/2018/02/space-black.png)
 
 Voici ce que l'on peut espérer à partir des différentes rumeurs qui agitent la toile
 
@@ -50,4 +50,4 @@ Voici ce que l'on peut espérer à partir des différentes rumeurs qui agitent l
 
 On verra vite si les rumeurs avaient juste :-D
 
-![iPhone 7](/content/images/2018/02/Latest-Apple-iPhone-7-HD-Wallpapers-2016-1.jpg)
+![iPhone 7](/assets/images/2018/02/Latest-Apple-iPhone-7-HD-Wallpapers-2016-1.jpg)

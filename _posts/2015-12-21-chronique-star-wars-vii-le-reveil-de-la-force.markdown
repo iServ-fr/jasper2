@@ -6,7 +6,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: vfleurette
@@ -41,7 +41,7 @@ De ce fait, faut-il aller voir Star Wars VII ? La réponse à cette question est
 
 J'ai entendu les anti-star wars proférer cet argument imparable : "_je n'en ai strictement rien à faire de Star Wars"_ . Ok, t'énerve pas gros ! Et la botte secrète, l'estocade finale : "_il y a des choses plus importantes dans la vie que Star Wars_ !" Eueueuh, oui, je suis d'accord, et à 1 000 % même, mais purée que c'est bon !!!
 
-![Star Wars - giphy](/content/images/2018/02/giphy.gif)
+![Star Wars - giphy](/assets/images/2018/02/giphy.gif)
 
 ### Trailer
 

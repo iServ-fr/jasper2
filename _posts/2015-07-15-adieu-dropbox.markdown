@@ -4,7 +4,7 @@ date: '2015-07-15 11:36:00'
 navigation: True
 layout: post
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: vfleurette

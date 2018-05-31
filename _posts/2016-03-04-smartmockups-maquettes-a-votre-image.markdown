@@ -6,7 +6,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: vfleurette
@@ -20,4 +20,4 @@ Profitez de vos maquettes de produits sans ouvrir Photoshop.
 
 ## Voila le résultat chez moi avec Smartmockups :) plutôt sympa non ?
 
-![smartmockups](/content/images/2018/02/smartmockups.png)
+![smartmockups](/assets/images/2018/02/smartmockups.png)

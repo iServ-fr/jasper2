@@ -7,7 +7,7 @@ tags:
 - tuto
 navigation: True
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: schaptal
@@ -19,7 +19,7 @@ Sa vitesse et sa facilité d'utilisation en font l'une des solutions les plus po
 
 En plus, si vous voulez l'intégrer à votre projet Symfony, ce n'est pas très compliqué :)
 
-![allonsy](/content/images/2018/04/allonsy.gif)
+![allonsy](/assets/images/2018/04/allonsy.gif)
 
 ### Installation de redis sur le serveur CentOS 7
 
@@ -100,4 +100,4 @@ Vous pouvez configurer beaucoup d'éléments et faire face à de nombreux cas d'
 
 Et voila, vous avez votre nouveau système de cache, et ça c'est beau.
 
-![youareawesome](/content/images/2018/04/youareawesome.jpg)
+![youareawesome](/assets/images/2018/04/youareawesome.jpg)

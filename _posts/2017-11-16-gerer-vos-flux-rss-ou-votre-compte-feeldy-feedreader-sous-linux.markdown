@@ -8,7 +8,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: vfleurette
@@ -25,7 +25,7 @@ Une de mes applications préférées sous Mac est Reeder. Jusqu'à présent je n
 * The Old Reader
 * Tiny Tiny RSS
 
-![Screenshot2](/content/images/2017/11/Screenshot2.png)
+![Screenshot2](/assets/images/2017/11/Screenshot2.png)
 Pour l'installer c'est très facile avec le terminal. Copiez et collez chaque ligne dans un terminal selon votre environnement et "Entrée" ...
 
 ***Ubuntu / Debian / Elementary OS / et autres dérivés de Debian***

@@ -4,7 +4,7 @@ date: '2016-05-02 16:27:00'
 navigation: True
 layout: post
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: vfleurette
@@ -25,7 +25,7 @@ La vitesse est plus facile à expliquer. Alors qu'il est souvent plus rapide d'u
 
 Pour la confidentialité, cela vient des multiples appels aux cdn's qui peuvent déposer des cookies sur votre système. Ils peuvent également enregistrer votre activité sur Internet puisque vous vous connectez à eux en utilisant un navigateur web, et obtiennent des informations sur les connexions telles que votre système d'exploitation, le navigateur Web que vous utilisez, votre adresse IP ou votre emplacement dans le monde.
 
-![decentralize](/content/images/2018/02/decentralize.png)
+![decentralize](/assets/images/2018/02/decentralize.png)
 
 [Decentraleyes](https://addons.mozilla.org/fr/firefox/addon/decentraleyes/) pour Firefox se préoccupe de ces deux aspects en même temps, au moins pour les CDNs.
 

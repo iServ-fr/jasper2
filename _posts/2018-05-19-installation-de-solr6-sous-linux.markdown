@@ -6,7 +6,7 @@ tags:
 - tuto
 navigation: True
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: schaptal
@@ -19,7 +19,7 @@ J'ai souvent utilisé le moteur d'indexation SolR (basé sur lucene) que ce soit
 # Installation
 Tout d'abord, vérifier si vous avez la version 1.8 ou + du JRE (Java Runtime Environment), avec un petit `java -version` dans votre terminal.
 
-![javaversion](/content/images/javaversion.png)
+![javaversion](/assets/images/javaversion.png)
 
 
 Ensuite, vous pouvez récupérer la version de solr 6 que vous souhaitez (en remplaçant les x et y par votre version): 

@@ -9,7 +9,7 @@ tags:
 - opensource
 navigation: True
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: schaptal
@@ -46,26 +46,26 @@ De plus, si vous souhaitez voir les processus d'un utilisateur en particulier (p
 
 Nous voici maintenant dans htop avec plein de processus et des nombres interessants (ah oui et contrairement à *top*, il y a ... des couleurs, oui des COULEURS). Et, on peut selectionner un processus à la souris.
 
-![htopGlobal](/content/images/2018/02/htopGlobal.png)
+![htopGlobal](/assets/images/2018/02/htopGlobal.png)
 *Quand je vous disais que ça marche aussi sous Mac*
 
 L'interface se divise en 2 parties:
 
 
 #### Monitoring global
-![headerHtop](/content/images/2018/02/headerHtop.jpg)
+![headerHtop](/assets/images/2018/02/headerHtop.jpg)
 
 L’en-tête est elle même coupée en deux. Sur le coté gauche, on a l'utilisation des différents coeurs (processeurs) et la mémoire utilisée, ainsi que la mémoire virtuelle paginée (swap). 
 La partie droite indique quant à elle le nombre de tâches actives et de threads, la durée de fonctionnement du système (« Uptime ») ainsi que la charge moyenne (« Load average ») du système durant les dernières 1, 5 et 15 minutes.
 
 #### la liste des process
-![htopBody](/content/images/2018/02/htopBody.jpg)
+![htopBody](/assets/images/2018/02/htopBody.jpg)
 
 La seconde partie liste la liste des processus et ses informations associées (le numéro de processus, le nom de l’utilisateur qui a lancé les processus, le pourcentage de cpu ou de mémoire utilisé, etc).
 
 ## Fonctionnalités
 
-![htopMenu](/content/images/2018/02/htopMenu.png)
+![htopMenu](/assets/images/2018/02/htopMenu.png)
 
 Une barre en bas récapitule les fonctionnalités de Htop accessible via les touches de fonction allant de F1 à F10. De plus, c'est dans cette barre que vous pourrez taper des mots pour le filtrage ou la recherche.
 * F1: help (raccourci `h`)

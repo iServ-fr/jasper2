@@ -7,7 +7,7 @@ tags:
 - opensource
 navigation: True
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: schaptal
@@ -52,11 +52,11 @@ En effet, moins de trackers, moins de données à charger, moins de conso :)
 Et en prime, un exemple d'utilisation de ghostery sur iserv
 
 
-![ghosterySansRessourcesExterne](/content/images/2018/03/ghosterySansRessourcesExterne.png)
+![ghosterySansRessourcesExterne](/assets/images/2018/03/ghosterySansRessourcesExterne.png)
 
 *Sans contenu externe*
 
 
-![ghosteryAvecRessourcesExterne](/content/images/2018/03/ghosteryAvecRessourcesExterne.jpg)
+![ghosteryAvecRessourcesExterne](/assets/images/2018/03/ghosteryAvecRessourcesExterne.jpg)
 
 *Avec du contenu externe* :) 

@@ -6,7 +6,7 @@ tags:
 - decouverte
 navigation: True
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: schaptal
@@ -22,19 +22,19 @@ git log
 ```
 
 Avec comme résultat:
-<img src="/content/images/2018/03/gitlog.jpg" style="width:80%;" />
+<img src="/assets/images/2018/03/gitlog.jpg" style="width:80%;" />
 
 C'est pas mal, c'est utile, mais bon ...
 c'est moche et on n'a pas tant d'informations que ça et coté interaction ... meh.
 
 Et là, on m'a fait découvrir [Tig](https://github.com/jonas/tig)
 
-![happiness](/content/images/2018/04/happiness.jpg)
+![happiness](/assets/images/2018/04/happiness.jpg)
 
 Tig, c'est une interface en mode texte pour git basée sur ncurses (comme [Htop](https://iserv.fr/htop/)).
 L'utilisation la plus simple est de simplement taper tig dans votre console, lorsque vous êtes dans un projet git.
 
-![tigFirst](/content/images/2018/03/tigFirst.jpg)
+![tigFirst](/assets/images/2018/03/tigFirst.jpg)
 
 L'affichage par défaut lors du lancement de tig est l'affichage de l'historique. Il s'agit essentiellement d'un journal git, avec un peu d'ASCII-art pour représenter l'historique (vous pouvez masquer l'arborescence avec G). Sans aucun argument, il affiche la branche en cours.
 
@@ -67,12 +67,12 @@ Pour utiliser tig sur windows, vous aurez besoin de cygwin, ainsi que les packag
 #### Tree
 De la vue principale, vous pouvez aller dans la vue Tree afin de parcourir l’arborescence du projet en utilisant la touche `t`. De plus, si vous selectionnez un fichier, appuyez sur `entrée`, vous verrez sur la fenêtre de droite le contenu du fichier.
 
-![tigtree](/content/images/2018/03/tigtree.jpg)
+![tigtree](/assets/images/2018/03/tigtree.jpg)
 
 #### Status
 Cette vue permet de visualiser le statut des branches de développements. Pour l'exemple, j'ai modifié le fichier Changelog et créé le fichier `unfichiercree`.
 
-<img src="/content/images/2018/03/tigstatus.jpg" style="width:60%;" />
+<img src="/assets/images/2018/03/tigstatus.jpg" style="width:60%;" />
 
 
 #### Blame
@@ -80,11 +80,11 @@ Cette vue permet de visualiser le statut des branches de développements. Pour l
 Vous voulez savoir qui a foiré votre beau code ou a introduit ce vilain bug ?
 Dès que vous êtes positionné sur un fichier, vous pouvez appuyer sur b et le git blame du fichier sélectionné apparaît. Vous pouvez faire aussi `tig blame monfichier` en ligne de commande pour accéder directement au blame du fichier.
 
-![gitblame2](/content/images/2018/03/gitblame2.jpg)
+![gitblame2](/assets/images/2018/03/gitblame2.jpg)
 
 Il suffit ensuite de sélectionner une ligne et appuyez sur Entrée, et il vous montrera le dernier commit qui a touché cette ligne.
 
-<img src="/content/images/2018/04/gitblame.jpg">
+<img src="/assets/images/2018/04/gitblame.jpg">
 <em>Quand je découvre que c'est moi qui ait introduit le bug <i class="em em-smile"></i></em>
 
 

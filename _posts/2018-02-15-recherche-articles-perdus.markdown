@@ -7,7 +7,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: schaptal
@@ -42,14 +42,14 @@ L'administration de Ghost est claire, simple d'utilisation.
 Contrairement à un wordpress assez lourd et où l'on peut se perdre, Ghost se concentre sur le texte et sur la mise en page des articles. **Point**.
 D'ailleurs, lors de la rédaction, le fait de pouvoir avoir la source d'un coté et le résultat de l'autre est d'une grande aide.
 
-![Screen and split](/content/images/2018/02/VueDivise.png)
+![Screen and split](/assets/images/2018/02/VueDivise.png)
 
 Le système de tag est suffisant pour structurer son blog (bizarrement j'ai plus l'impression d'avoir à faire à des catégories qu'à des tags mais bon).
 De plus, le fait de pouvoir rajouter un petit texte descriptif ainsi qu'une image en entête (comme pour un article) est largement suffisant pour faire d'un tag une page à part entière.
 
 Enfin, pour ceux qui veulent optimiser le SEO (search engine optimisation) de leurs articles, vous pouvez mettre le title ainsi que la meta description pour la page de votre article. L'affichage de la preview du résultat dans les moteurs de recherche est un gros plus.
 
-<img alt="descriptiondifferente" src="/content/images/2018/02/descriptMoteurRecherche-1.png" style="max-width: 40% !important; height: auto;margin-top:0;"/>
+<img alt="descriptiondifferente" src="/assets/images/2018/02/descriptMoteurRecherche-1.png" style="max-width: 40% !important; height: auto;margin-top:0;"/>
 
 Pour conclure, reprenons la deuxième partie de la définition wikipédia de Ghost:
 > *Ghost est conçu pour simplifier le processus de publication en ligne par des blogueurs.*

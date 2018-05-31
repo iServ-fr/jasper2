@@ -6,7 +6,7 @@ tags:
 - opensource
 navigation: True
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: schaptal
@@ -53,7 +53,7 @@ Or simply type: `resume export` and follow the prompts.
 
 Voici le json de base qui est généré (dont j'ai enlevé quelques lignes pour le rendre plus lisible)
 
-![resumeJson](/content/images/2018/02/resumeJson.png)
+![resumeJson](/assets/images/2018/02/resumeJson.png)
 
 Il vous suffit de le modifier avec votre éditeur de texte préféré et le tour est joué, le contenu de votre cv est prêt :)
 

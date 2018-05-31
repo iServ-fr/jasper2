@@ -6,7 +6,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: vfleurette
@@ -24,10 +24,10 @@ Vous pouvez commencer avec juste un peu de personnalisation à partir des param
 Il y a le support de plusieurs comptes, et vous pouvez même les personnaliser individuellement. Sans oublier les GIFs :) ,  Flamingo offre déjà un support pour eux. Il y a aussi une page 'activité' qui affiche tous les like, retweets et nouveaux followers sur votre compte. Flamingo est disponible en téléchargement sur Google Play "en version bêta", il lui manque encore certaines fonctionnalités mais il parvient toujours à vous impressionner par sa nature audacieuse et il est sûr d'attirer votre attention. Vous pouvez l'obtenir pour 1,49 € [sur Google Play](https://play.google.com/store/apps/details?id=com.samruston.twitter) .
 
 <div style="width:100%;">
-<img src="/content/images/2018/02/flamingo_screen_0.png" style="width:50%;float:left;padding:10px;" />
-<img src="/content/images/2018/02/flamingo_screen_1.png" style="width:50%;float:left;padding:10px;" />
-<img src="/content/images/2018/02/flamingo_screen_2.png" style="width:50%;float:left;padding:10px;" />
-<img src="/content/images/2018/02/flamingo_screen_3.png" style="width:50%;float:left;padding:10px;" />
+<img src="/assets/images/2018/02/flamingo_screen_0.png" style="width:50%;float:left;padding:10px;" />
+<img src="/assets/images/2018/02/flamingo_screen_1.png" style="width:50%;float:left;padding:10px;" />
+<img src="/assets/images/2018/02/flamingo_screen_2.png" style="width:50%;float:left;padding:10px;" />
+<img src="/assets/images/2018/02/flamingo_screen_3.png" style="width:50%;float:left;padding:10px;" />
 </div>   
 <div style="clear:both;"></div>
 

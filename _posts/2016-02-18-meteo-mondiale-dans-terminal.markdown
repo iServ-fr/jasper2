@@ -6,7 +6,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: content/images/water.jpg
+cover: assets/images/water.jpg
 navigation: True
 class: post-template
 author: vfleurette
@@ -70,4 +70,4 @@ Si vous êtes en visite à Marseille ce week-end, il suffit d'exécuter **Wego 4
 
 Et voila ce que ça donne :
 
-![météo wego_montpellier_guake](/content/images/2018/02/wego-e1455811038826.png)
+![météo wego_montpellier_guake](/assets/images/2018/02/wego-e1455811038826.png)
