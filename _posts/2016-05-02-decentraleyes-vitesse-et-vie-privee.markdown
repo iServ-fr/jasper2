@@ -4,7 +4,7 @@ date: '2016-05-02 16:27:00'
 navigation: True
 layout: post
 current: post
-cover: assets/images/water.jpg
+cover: assets/images/2018/02/decentralize-1.png
 navigation: True
 class: post-template
 author: vfleurette

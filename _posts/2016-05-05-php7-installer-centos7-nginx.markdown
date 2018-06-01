@@ -7,7 +7,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: assets/images/water.jpg
+cover: assets/images/2018/02/PHP_Logo.png
 navigation: True
 class: post-template
 author: vfleurette

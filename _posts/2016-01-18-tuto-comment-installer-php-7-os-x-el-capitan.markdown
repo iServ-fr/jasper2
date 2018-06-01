@@ -8,7 +8,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: assets/images/water.jpg
+cover: https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=278085b2f7e71c40d0bd45a0e1fc06df
 navigation: True
 class: post-template
 author: vfleurette

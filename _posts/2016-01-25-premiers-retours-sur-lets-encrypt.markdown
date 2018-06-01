@@ -9,7 +9,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: assets/images/water.jpg
+cover: assets/images/2018/02/lets-encrypt.jpg
 navigation: True
 class: post-template
 author: vfleurette
