@@ -5,7 +5,7 @@ title: A propos
 navigation: true
 logo: 'assets/images/ghost.png'
 class: page-template
-subclass: 'post page'
+subclass: 'page'
 ---
 
 Quelques mots, avant que vous ne partiez à l'assaut de nos articles.
