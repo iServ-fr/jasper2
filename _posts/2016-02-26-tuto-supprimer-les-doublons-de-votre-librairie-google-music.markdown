@@ -6,7 +6,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: assets/images/2018/02/google-play-music.jp
+cover: assets/images/2018/02/google-play-music.jpg
 unsplash: false
 navigation: True
 class: post-template
