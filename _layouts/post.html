@@ -133,7 +133,7 @@ into the {body} of the default.hbs template -->
                             style="background-image: url({{ site.baseurl }}{{ site.cover }})"
                         {% else %}
                             {% if page.cover %}
-                                style="background-image: url(url({% if page.unsplash == false %}{{ site.baseurl }}{% endif %}{{ page.cover }})"{% endif %}
+                                style="background-image: url({% if page.unsplash == false %}{{ site.baseurl }}{% endif %}{{ page.cover }})"{% endif %}
                         {% endif %}
                     >
                         <header class="read-next-card-header">
