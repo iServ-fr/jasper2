@@ -7,6 +7,7 @@ navigation: True
 layout: post
 current: post
 cover: assets/images/2018/02/September-7-Apple-Media-Event-Wallpaper-Apple-Invite-Mac.png
+unsplash: false
 navigation: True
 class: post-template
 author: vfleurette

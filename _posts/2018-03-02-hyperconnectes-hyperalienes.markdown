@@ -8,6 +8,7 @@ tags:
 navigation: True
 current: post
 cover: https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=4c8b8a63639df31201d73994d3a1a183
+unsplash: true
 navigation: True
 class: post-template
 author: schaptal

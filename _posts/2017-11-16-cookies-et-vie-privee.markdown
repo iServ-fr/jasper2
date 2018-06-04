@@ -5,6 +5,7 @@ navigation: True
 layout: post
 current: post
 cover: assets/images/water.jpg
+unsplash: false
 navigation: True
 class: post-template
 author: vfleurette

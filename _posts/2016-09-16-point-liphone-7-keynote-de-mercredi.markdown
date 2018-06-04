@@ -7,6 +7,7 @@ navigation: True
 layout: post
 current: post
 cover: assets/images/2018/02/apple-1699197_1920.png
+unsplash: false
 navigation: True
 class: post-template
 author: vfleurette

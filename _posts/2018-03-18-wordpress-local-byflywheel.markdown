@@ -8,6 +8,7 @@ tags:
 navigation: True
 current: post
 cover: assets/images/2018/03/localbyflywheel.png
+unsplash: false
 navigation: True
 class: post-template
 author: schaptal

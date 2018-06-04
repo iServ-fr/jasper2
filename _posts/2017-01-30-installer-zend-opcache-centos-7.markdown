@@ -9,6 +9,7 @@ navigation: True
 layout: post
 current: post
 cover: https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=6bfea06674b33a2332da1b315b31e16b
+unsplash: true
 navigation: True
 class: post-template
 author: vfleurette

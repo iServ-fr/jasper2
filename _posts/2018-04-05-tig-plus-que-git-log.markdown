@@ -7,6 +7,7 @@ tags:
 navigation: True
 current: post
 cover: assets/images/2018/03/tigFirst-1.jpg
+unsplash: false
 navigation: True
 class: post-template
 author: schaptal

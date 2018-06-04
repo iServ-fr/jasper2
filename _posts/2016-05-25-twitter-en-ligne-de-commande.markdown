@@ -8,6 +8,7 @@ navigation: True
 layout: post
 current: post
 cover: assets/images/2018/02/twitter-3075846_1280.jpg
+unsplash: false
 navigation: True
 class: post-template
 author: vfleurette

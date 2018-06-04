@@ -8,6 +8,7 @@ tags:
 navigation: True
 current: post
 cover: assets/images/2018/03/ghostery-1.jpeg
+unsplash: false
 navigation: True
 class: post-template
 author: schaptal

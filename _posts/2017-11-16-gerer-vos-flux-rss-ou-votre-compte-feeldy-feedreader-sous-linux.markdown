@@ -9,6 +9,7 @@ navigation: True
 layout: post
 current: post
 cover: assets/images/2017/11/Screenshot2-1.png
+unsplash: false
 navigation: True
 class: post-template
 author: vfleurette

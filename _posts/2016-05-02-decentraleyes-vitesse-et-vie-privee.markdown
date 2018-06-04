@@ -5,6 +5,7 @@ navigation: True
 layout: post
 current: post
 cover: assets/images/2018/02/decentralize-1.png
+unsplash: false
 navigation: True
 class: post-template
 author: vfleurette

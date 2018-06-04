@@ -5,6 +5,7 @@ navigation: True
 layout: post
 current: post
 cover: https://images.unsplash.com/photo-1517819655378-25fe37197692?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=64ab06168f62394febf7914717c7a7fa
+unsplash: true
 navigation: True
 class: post-template
 author: vfleurette

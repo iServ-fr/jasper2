@@ -10,6 +10,7 @@ navigation: True
 layout: post
 current: post
 cover: assets/images/2018/02/lets-encrypt.jpg
+unsplash: false
 navigation: True
 class: post-template
 author: vfleurette

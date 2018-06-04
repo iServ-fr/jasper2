@@ -8,6 +8,7 @@ tags:
 navigation: True
 current: post
 cover: assets/images/2018/04/symfony-rds.jpg
+unsplash: false
 navigation: True
 class: post-template
 author: schaptal
