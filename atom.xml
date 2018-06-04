@@ -86,21 +86,6 @@ Mais pour voir quoi et surtout comment développer, il faut étudier ce qui a é
     
       
       <item>
-        <title>À propos</title>
-        
-          <description>&lt;p&gt;Quelques mots, avant que vous ne partiez à l’assaut de nos articles.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Fri, 23 Mar 2018 09:55:17 +0000</pubDate>
-        <link>
-        /a-propos</link>
-        <guid isPermaLink="true">/a-propos</guid>
-      </item>
-      
-    
-      
-      <item>
         <title>Introduction à Docker: première approche</title>
         
           <description>&lt;p&gt;Bonjour à tous, aujourd’hui nous parlons d’une technologie en vogue, Docker. Que vous soyez développeurs, administrateurs systèmes ou DSI, vous avez certainement entendu parler de Docker. C’est une technologie qui nous interesse et que nous allons étudier un plus intensemment ces prochaines semaines. C’est pour ça que nous en parlons aujourd’hui :)&lt;/p&gt;
