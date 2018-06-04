@@ -1,6 +1,6 @@
 ---
 layout: page
-current: a-propos
+current: apropos
 title: A propos
 navigation: true
 logo: 'assets/images/ghost.png'
