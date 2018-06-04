@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> - Articles</title>
+    <description>Un blog Tech pour parler des découvertes, expériences, humeurs du moment autour du web et des technologies qui caractérisent ce serveur.</description>
+    <link>
+    </link>
+    
+      
+      <item>
+        <title>Installation de SolR 6 sous CentOS</title>
+        
+          <description>&lt;p&gt;J’ai souvent utilisé le moteur d’indexation SolR (basé sur lucene) que ce soit pour mes développements ou en production. Nous allons installer la version 6 de SolR et en faire un service, pour que SolR soit plus facilement gérable en ligne de commande.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 19 May 2018 18:49:59 +0000</pubDate>
+        <link>
+        /installation-de-solr6-sous-linux</link>
+        <guid isPermaLink="true">/installation-de-solr6-sous-linux</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Neutralité du net, les terminaux</title>
+        
+          <description>&lt;p&gt;L’ARCEP met en garde contre l’accès limité à internet qu’offrent les smartphones, tablettes et assistants vocaux dans son rapport de février 2018. Pourquoi l’autorité des télécoms s’attaque aux terminaux ? Parce qu’elle est la garante de la neutralité du net et qu’elle considère les terminaux comme des opérateurs, les uns comme les autres conditionnant l’accès aux contenus et services.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 02 May 2018 17:30:00 +0000</pubDate>
+        <link>
+        /neutralite-du-net-les-terminaux</link>
+        <guid isPermaLink="true">/neutralite-du-net-les-terminaux</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Signer ses commits avec GPG</title>
+        
+          <description>&lt;p&gt;Ajourd’hui, un article sur git et les commits (encore ?!).
+Oui, encore. Mais là, c’est pour avoir une jolie, une jolie, …
+Mais une jolie signature voyons.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 23 Apr 2018 17:00:00 +0000</pubDate>
+        <link>
+        /signer-ses-commits-avec-gpg</link>
+        <guid isPermaLink="true">/signer-ses-commits-avec-gpg</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Installer redis pour votre projet Symfony sur CentOS 7</title>
+        
+          <description>&lt;p&gt;Comme beaucoup, vous avez du déjà voir passer le mot “redis”, au moins dans des articles ou dans des réunions avec des adminsys. Redis est un système de gestion de base de données clef-valeur scalable, très hautes performances, écrit en C ANSI et distribué sous licence BSD.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 13 Apr 2018 17:00:00 +0000</pubDate>
+        <link>
+        /installer-redis-pour-symfony-centos</link>
+        <guid isPermaLink="true">/installer-redis-pour-symfony-centos</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Tig, ta nouvelle interface git en ligne de commande</title>
+        
+          <description>&lt;p&gt;Vous avez votre projet sous git, vous avez peu à peu construit votre projet, au fur et à mesure des commits ou alors vous avez récupéré un projet git existant sur une plateforme, ouverte ou non, comme github, gitlab, bitbucket, etc.
+Mais pour voir quoi et surtout comment développer, il faut étudier ce qui a été fait auparavant. Et pour cela, il faut se plonger dans … l’historique.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 05 Apr 2018 20:02:00 +0000</pubDate>
+        <link>
+        /tig-plus-que-git-log</link>
+        <guid isPermaLink="true">/tig-plus-que-git-log</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>À propos</title>
+        
+          <description>&lt;p&gt;Quelques mots, avant que vous ne partiez à l’assaut de nos articles.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 23 Mar 2018 09:55:17 +0000</pubDate>
+        <link>
+        /a-propos</link>
+        <guid isPermaLink="true">/a-propos</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Introduction à Docker: première approche</title>
+        
+          <description>&lt;p&gt;Bonjour à tous, aujourd’hui nous parlons d’une technologie en vogue, Docker. Que vous soyez développeurs, administrateurs systèmes ou DSI, vous avez certainement entendu parler de Docker. C’est une technologie qui nous interesse et que nous allons étudier un plus intensemment ces prochaines semaines. C’est pour ça que nous en parlons aujourd’hui :)&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 22 Mar 2018 11:00:00 +0000</pubDate>
+        <link>
+        /introduction-docker</link>
+        <guid isPermaLink="true">/introduction-docker</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Travailler en local avec Wordpress:  Local by Flywheel</title>
+        
+          <description>&lt;p&gt;Pour ceux qui ont déjà eu à travailler en local avec wordpress, vous savez qu’il faut installer MAMP (ou WAMP, ou LAMP, suivant le système d’exploitation) et que ce n’est pas toujours facile. Aujourd’hui, je vais vous faire découvrir une alternative simple pour faire du wordpress en local. Je vais vous parler de Local by Flywheel.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 18 Mar 2018 21:33:36 +0000</pubDate>
+        <link>
+        /wordpress-local-byflywheel</link>
+        <guid isPermaLink="true">/wordpress-local-byflywheel</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ghostery, l'extension anti-tracking passe à l'open source</title>
+        
+          <description>&lt;p&gt;Ghostery, une extension pour navigateur web qui empêche le tracking de votre navigation sur le web, a ouvert son code source.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 15 Mar 2018 19:45:10 +0000</pubDate>
+        <link>
+        /ghostery-extension-open-source</link>
+        <guid isPermaLink="true">/ghostery-extension-open-source</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>History’s Creed: histoire et jeux vidéo, pour le meilleur ou pour le pire ?</title>
+        
+          <description>&lt;p&gt;Aujourd’hui, un article un peu différent. En effet, il s’agit d’un partenariat entre Arte Creative et le vulgarisateur/youtubeur en Histoire, &lt;a href=&quot;https://www.youtube.com/user/notabenemovies&quot;&gt;Nota Bene&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 11 Mar 2018 20:00:00 +0000</pubDate>
+        <link>
+        /historys-creed-histoire-et-jeux-videos</link>
+        <guid isPermaLink="true">/historys-creed-histoire-et-jeux-videos</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Logs sous unix: comment les consulter ?</title>
+        
+          <description>&lt;p&gt;Il est probable que dans votre vie d’informaticien, vous devrez étudier des fichiers de logs, qu’ils viennent du système ou de vos applications. 
+Après tout, ils sont là pour une raison très importante … pour vous aider à résoudre un problème. 
+En fait, chaque administrateur (ou développeur aussi ^^) chevronné vous demandera immédiatement en cas de problème: “&lt;em&gt;y a marqué quoi dans les logs ?&lt;/em&gt;”.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 08 Mar 2018 13:27:16 +0000</pubDate>
+        <link>
+        /logs-unix-comment-les-consulter</link>
+        <guid isPermaLink="true">/logs-unix-comment-les-consulter</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Hyperconnectés, hyperaliénés ? (émission Interception du dimanche 18 février 2018)</title>
+        
+          <description>&lt;p&gt;Les réseaux sociaux sont devenus de véritables machines de guerre qui analysent vos likes et scrutent vos opinions à des fins commerciales ou politiques. Alors que la législation sur le sujet tarde à se mettre en place, une prise de conscience semble timidement se dessiner dans la société.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 02 Mar 2018 12:00:00 +0000</pubDate>
+        <link>
+        /hyperconnectes-hyperalienes</link>
+        <guid isPermaLink="true">/hyperconnectes-hyperalienes</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>HTOP, le monitoring en couleurs</title>
+        
+          <description>&lt;p&gt;Htop est un moniteur système pour les systèmes d’exploitation type Unix très similaire à top, qui fonctionne comme lui en mode Terminal, mais qui dispose d’un environnement en mode texte plus convivial (et coloré) que ce dernier. Il est programmé en C à l’aide de la bibliothèque ncurses.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 27 Feb 2018 22:02:57 +0000</pubDate>
+        <link>
+        /htop</link>
+        <guid isPermaLink="true">/htop</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>JSON Resume ou comment résumer sa vie en Json</title>
+        
+          <description>&lt;p&gt;Vous voulez faire un CV sans avoir à utiliser word ou un autre logiciel de traitement de texte ? Vous voulez pouvoir réutiliser vos informations sur un autre cv sans avoir à tout recommencer ? Alors JSON Resume va vous  intéresser.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 25 Feb 2018 13:40:33 +0000</pubDate>
+        <link>
+        /jsonresume</link>
+        <guid isPermaLink="true">/jsonresume</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Rediriger uniquement la racine de son site sous Apache</title>
+        
+          <description>&lt;p&gt;Il est parfois necessaire de faire des redirections pour ses sites web. Il y  quelques cas communs comme le changement d’url d’une page d’un de vos sites ou un changement de nom de domaine. Mais comment rediriger seulement la racine de son site web ?&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 22 Feb 2018 16:17:23 +0000</pubDate>
+        <link>
+        /rediriger-racine-site-apache</link>
+        <guid isPermaLink="true">/rediriger-racine-site-apache</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>A la recherche des articles perdus - Ghost</title>
+        
+          <description>&lt;p&gt;Bonjour à tous, 
+aujourd’hui, on parle de notre site iServ, et notre cms &lt;a href=&quot;https://ghost.org/fr/&quot;&gt;Ghost&lt;/a&gt;, mais avec une approche différente de celle de Vincent dans son article &lt;a href=&quot;https://iserv.fr/bonjour-ghost/&quot;&gt;Bonjour Ghost&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 15 Feb 2018 10:31:00 +0000</pubDate>
+        <link>
+        /recherche-articles-perdus</link>
+        <guid isPermaLink="true">/recherche-articles-perdus</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>WordPress utilise les polices systeme et c'est une bonne chose</title>
+        
+          <description>&lt;p&gt;WordPress 4.6 a été mis à disposition cette semaine. Cette mise à jour est relativement petite mais apporte tout de même son lot de correctifs avec un bonus. En effet, l’administration de votre Wordpress utilise à présent la &lt;a href=&quot;https://make.wordpress.org/core/2016/07/07/native-fonts-in-4-6/&quot;&gt;police de caractère principale de votre OS&lt;/a&gt;. Cela n’implique pas un gros changement mais vous noterez peut-être une différence malgré tout et c’est visuellement plus confortable. La police utilisée précédemment dans l’administration était Open Sans.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 16 Nov 2017 10:24:27 +0000</pubDate>
+        <link>
+        /wordpress-utilise-police-systeme</link>
+        <guid isPermaLink="true">/wordpress-utilise-police-systeme</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Cookies et vie privée</title>
+        
+          <description>&lt;p&gt;J’essaie de faire attention à ma vie privée lorsque je surf sur internet, j’utilise ublock et vous devriez probablement en faire autant…
+Cookies et vie privée …&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 16 Nov 2017 10:17:56 +0000</pubDate>
+        <link>
+        /cookies-et-vie-privee</link>
+        <guid isPermaLink="true">/cookies-et-vie-privee</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Gérer vos Flux RSS ou votre Compte Feeldy, Feedreader sous Linux</title>
+        
+          <description>&lt;p&gt;Une de mes applications préférées sous Mac est Reeder. Jusqu’à présent je n’avais pas encore trouvé d’équivalent sous Linux avec une interface sexy et qui se synchronise avec un service RSS auto-hébergé ou non. Et puis j’ai découvert FeedReader. Si vous êtes un fan de la lecture des blogs et un grand consommateur de flux RSS, alors FeedReader est une très belle application pour organiser et gérer hors de votre fil de news. Il est compatible avec :&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 16 Nov 2017 10:08:19 +0000</pubDate>
+        <link>
+        /gerer-vos-flux-rss-ou-votre-compte-feeldy-feedreader-sous-linux</link>
+        <guid isPermaLink="true">/gerer-vos-flux-rss-ou-votre-compte-feeldy-feedreader-sous-linux</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Désactiver Bonjour sur Cyberduck</title>
+        
+          <description>&lt;p&gt;Si vous utilisez &lt;a href=&quot;https://cyberduck.io/&quot;&gt;Cyberduck&lt;/a&gt; sur le réseau local de votre société, IUT ou Université, vous ne savez peut-être pas que &lt;a href=&quot;https://cyberduck.io/&quot;&gt;Cyberduck&lt;/a&gt; ouvre le protocole de communication Bonjour.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 02 Jun 2017 07:59:00 +0000</pubDate>
+        <link>
+        /desactiver-bonjour-cyberduck</link>
+        <guid isPermaLink="true">/desactiver-bonjour-cyberduck</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Installer Zend OPcache sur CentOS 7</title>
+        
+          <description>&lt;p&gt;Zend OPcache accélère l’exécution de code PHP. Comment?
+Nous savons que PHP est un langage interprété où les instructions sont écrites dans un script et a besoin d’un processus pour l’analyser/interpréter et l’exécuter. 
+Zend OPcache supprime l’etape d’interpretation en compilant le script directement exécuté par la machine cible qui rend l’exécution de votre application PHP plus rapide. 
+Cet article montre comment installer et configurer Zend OPcache sur CentOS 7.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 30 Jan 2017 11:04:00 +0000</pubDate>
+        <link>
+        /installer-zend-opcache-centos-7</link>
+        <guid isPermaLink="true">/installer-zend-opcache-centos-7</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Un point sur l'iphone 7 avant le keynote de mercredi</title>
+        
+          <description>&lt;p&gt;A la veille de l’annonce du nouveau téléphone d’Apple alias iPhone 7, voici ce que le web laisse fuiter. Si tout ne se révélera pas forcement juste, tout ce qui suit a suffisamment fuité pour être crédible. 
+Nous verrons mercredi jusqu’à quel point la machine anti-fuite d’Apple a des trous dans la coque.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 16 Sep 2016 07:56:00 +0000</pubDate>
+        <link>
+        /point-liphone-7-keynote-de-mercredi</link>
+        <guid isPermaLink="true">/point-liphone-7-keynote-de-mercredi</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>iPhone 7 sera annoncé le 7 septembre à 19h</title>
+        
+          <description>&lt;p&gt;A vos calendriers, les gens, c’est officiel. Apple invite la presse à son prochain événement le 7 Septembre au Bill Graham Civic Center à San Francisco à 10 heures (19h pour nous). Elle devrait dévoiler les nouveaux iPhone 7 et pourrait dévoiler de nouveaux MacBook Pros ainsi que  la v2 de l’Applewatch lors de ce même événement.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 29 Aug 2016 12:51:00 +0000</pubDate>
+        <link>
+        /iphone-7-sera-annonce-7-septembre</link>
+        <guid isPermaLink="true">/iphone-7-sera-annonce-7-septembre</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Nipsource HS: CentOS podcast</title>
+        
+          <description>&lt;h3 id=&quot;un-podcast-audio-autour-de-la-distribution-centos-qui-fait-vivre-ce-serveur&quot;&gt;Un podcast audio autour de la distribution Centos qui fait vivre ce serveur.&lt;/h3&gt;
+
+</description>
+        
+        <pubDate>Tue, 23 Aug 2016 14:00:00 +0000</pubDate>
+        <link>
+        /nipsource-hs-centos-podcast</link>
+        <guid isPermaLink="true">/nipsource-hs-centos-podcast</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>HTTP/2 pour le développeur Web |  video</title>
+        
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;Nous, les développeurs, cherchons encore à comprendre les implications de HTTP/2 dans nos applications et nos infrastructures. Voyons ensemble les bases du protocole lui-même, suivi des questions importantes : comment bien choisir son serveur HTTP/2, comment bien préparer sa migration vers HTTP/2, quels sont les conséquences pour le développement front-end, Server Push ou Stream Prioritization ?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        
+        <pubDate>Tue, 23 Aug 2016 08:05:00 +0000</pubDate>
+        <link>
+        /http2-pour-le-developpeur-web</link>
+        <guid isPermaLink="true">/http2-pour-le-developpeur-web</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Flamingo : un magnifique client Twitter pour Android (payant)</title>
+        
+          <description>&lt;p&gt;Flamingo est une application Twitter pour Android vraiment magnifique. Le client officiel et ses publicités envahissantes vous énerves ? 
+Alors il est temps d’essayer &lt;strong&gt;Flamingo&lt;/strong&gt;. Si il y a bien une chose que j’ai regretté en quittant iOs pour Android, c’est bien la pauvreté des clients tiers pour twitter et pour les mails. Ceux qui existent sont souvent moches, trop compliqués, bugués, pas mis à jour et vous font miroiter des belles fonctionnalités en masquant dans les grandes lignes qu’il vont pomper toutes les données qu’ils peuvent sur votre téléphone et cela dans vote dos. Déjà avec un Androïd c’est un problème, mais si on commence à utiliser tous les services alors là c’est open-bar. Flamingo a le mérite d’être une application belle, simple et très personnalisable.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 04 Aug 2016 08:16:00 +0000</pubDate>
+        <link>
+        /flamingo-twitter</link>
+        <guid isPermaLink="true">/flamingo-twitter</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Twitter en ligne de commande sous Linux</title>
+        
+          <description>&lt;p&gt;Avec cet article, je vais vous montrer comment accéder à Twitter en ligne de commande. Il ne manque pas de clients Twitter disponibles, différents en termes de fonctionnalités etc. Si vous êtes un de ces fous de ligne de commande, il y en a un un pour vous aussi.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 25 May 2016 11:13:00 +0000</pubDate>
+        <link>
+        /twitter-en-ligne-de-commande</link>
+        <guid isPermaLink="true">/twitter-en-ligne-de-commande</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Canary, un nouveau client mail sur mac complet en Beta</title>
+        
+          <description>&lt;p&gt;Canary est un nouveau client mail sur Mac. D’autres clients mails en apportent plus, d’autres font le minimum. Canary semble très complet mais propose une belle interface qui sait rester simple.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 25 May 2016 08:52:00 +0000</pubDate>
+        <link>
+        /canary-client-mail-sur-mac</link>
+        <guid isPermaLink="true">/canary-client-mail-sur-mac</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>iOS10, les fonctionnalités de vos rêves</title>
+        
+          <description>&lt;p&gt;Afin de mettre en images ses attentes les plus viables concernant iOS10, un journaliste du site MacStories a fait appel à un designer pour réaliser une vidéo de leur liste de vœux regroupant les fonctionnalités les plus attendues d’iOS10, l’OS mobile d’Apple qui sera présenté dans moins d’un mois maintenant.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 06 May 2016 16:50:00 +0000</pubDate>
+        <link>
+        /ios10-les-fonctionnalites-de-vos-reves</link>
+        <guid isPermaLink="true">/ios10-les-fonctionnalites-de-vos-reves</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Telegram un challenger face à WhatsAp</title>
+        
+          <description>&lt;p&gt;&lt;strong&gt;Telegram&lt;/strong&gt; est un système de messagerie instantané principalement axé sur le respect de la vie privée et la disponibilité multi-plateforme. Il existe des clients télégramme pour les smartphones (Android, iOS, Windows Phone) et les systèmes (Windows, OS X, Linux).&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 06 May 2016 08:25:00 +0000</pubDate>
+        <link>
+        /telegram-un-challenger-face-a-whatsap</link>
+        <guid isPermaLink="true">/telegram-un-challenger-face-a-whatsap</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>PHP7 : Comment l'installer sur Centos7 et nginx</title>
+        
+          <description>&lt;p&gt;Bonjour à tous, le tutoriel de cette semaine portera sur l’installation de &lt;strong&gt;PHP7&lt;/strong&gt; sur &lt;strong&gt;CentOS7&lt;/strong&gt;  avec &lt;strong&gt;php-fpm&lt;/strong&gt;.
+Avoir Nginx d’installé est une condition préalable à celui-ci, donc si vous ne l’avez pas fait, ne vous inquiétez pas, il est encore le temps, via ce tutoriel &lt;a href=&quot;https://www.iserv.fr/ready-for-http2/&quot;&gt;http2&lt;/a&gt;.
+On ne va pas seulement installer PHP, cependant pour bien faire les choses, il faut d’abord installer PHP-FPM, pour que PHP puisse fonctionner comme un processus distinct plutôt que de l’intégrer dans le processus de serveur Web. Cela a été longptemps la meilleure pratique, mais il est un peu plus difficile à mettre en place que l’ancienne.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 05 May 2016 15:45:00 +0000</pubDate>
+        <link>
+        /php7-installer-centos7-nginx</link>
+        <guid isPermaLink="true">/php7-installer-centos7-nginx</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Une introduction de Star Wars inspiré de James Bond : Spectre</title>
+        
+          <description>&lt;p&gt;&lt;strong&gt;Le  célèbre groupe radiohead avait écrit et réalisé une chanson, nommée…Spectre, pour le dernier James Bond en date.&lt;/strong&gt; Malheureusement, cette sublime musique n’a finalement pas été retenue et nous avons donc eu droit à &lt;a href=&quot;https://www.youtube.com/watch?v=8jzDnsjYv9A&quot;&gt;Sam Smith writing’s on the wall&lt;/a&gt; (Bonne chanson mais pas au niveau de Skyfall à mes yeux). Kurt Rauffer, un fan de &lt;strong&gt;Radiohead&lt;/strong&gt; et de la saga &lt;strong&gt;Star Wars&lt;/strong&gt; leur rend hommage dans le cadre de sa thèse d’étudiant à l’école de New York en réalisant une séquence d’introduction MAGNIFIQUE. Il a ainsi repris les images du film &lt;strong&gt;L’empire contre-attaque&lt;/strong&gt; et réalisé un gros travail d’animation 3D afin de rendre cette partie tout simplement superbe.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 05 May 2016 08:58:00 +0000</pubDate>
+        <link>
+        /une-introduction-de-star-wars-inspire-de-james-bond</link>
+        <guid isPermaLink="true">/une-introduction-de-star-wars-inspire-de-james-bond</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Decentraleyes : vitesse et vie privée</title>
+        
+          <description>&lt;h2 id=&quot;decentraleyes--vitesse-et-vie-privée-une-extension-pour-firefox&quot;&gt;Decentraleyes : vitesse et vie privée une extension pour firefox&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 02 May 2016 16:27:00 +0000</pubDate>
+        <link>
+        /decentraleyes-vitesse-et-vie-privee</link>
+        <guid isPermaLink="true">/decentraleyes-vitesse-et-vie-privee</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Big !bang avec DuckDuckGo pour iServ</title>
+        
+          <description>&lt;p&gt;J’aime bien le moteur de recherche &lt;a href=&quot;https://duckduckgo.com&quot; title=&quot;Visiter https://duckduckgo.com/ (le lien s'ouvrira dans une nouvelle fenêtre)&quot;&gt;DuckDuckGo&lt;/a&gt; et sa fonctionalité !&lt;strong&gt;bang&lt;/strong&gt;, bien pratique et moins curieux que Google; DuckDuckGo peut en outre être défini comme moteur de recherche par défaut sur Safari iOS et OS X. &lt;a href=&quot;https://www.qwant.com&quot; title=&quot;Visiter https://www.qwant.com/ (le lien s'ouvrira dans une nouvelle fenêtre)&quot;&gt;Qwant&lt;/a&gt; également mérite le détour.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 29 Apr 2016 09:25:00 +0000</pubDate>
+        <link>
+        /big-bang-avec-duckduckgo-pour-iserv</link>
+        <guid isPermaLink="true">/big-bang-avec-duckduckgo-pour-iserv</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ramme, un client Instagram open source et multiplateforme</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://github.com/terkelg/ramme&quot;&gt;Ramme&lt;/a&gt; est un nouveau client Instagram de bureau qui a la particularité d’être open source et multiplateforme. Créé avec le framework Electron, il permet de « liker » et commenter les photos de ses contacts, chercher du contenu et modifier son profil. Ramme est un nouveau client Instagram de bureau qui a la particularité d’être open source et multiplateforme. Créé avec le framework Electron, il permet de « liker » et commenter les photos de ses contacts, chercher du contenu et modifier son profil.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 09 Apr 2016 08:02:00 +0000</pubDate>
+        <link>
+        /ramme-client-instagram-open-source-multiplateforme</link>
+        <guid isPermaLink="true">/ramme-client-instagram-open-source-multiplateforme</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Cloud computing, qu'est ce c'est ?</title>
+        
+          <description>&lt;p&gt;Google est devenu prestataire d’Apple dans l’informatique dématérialisée (“cloud”), a rapporté jeudi le site spécialisé américain Re/code, citant des sources anonymes proches du dossier. Le cloud computing, c’est l’exploitation de ressources informatiques à distance par l’intermédiaire d’un réseau, généralement internet.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 20 Mar 2016 17:42:00 +0000</pubDate>
+        <link>
+        /cloud-computing-quest-ce-cest</link>
+        <guid isPermaLink="true">/cloud-computing-quest-ce-cest</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Smartmockups, des maquettes à votre image en deux clics</title>
+        
+          <description>&lt;h2 id=&quot;présentation-desmartmockups&quot;&gt;Présentation de Smartmockups&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 04 Mar 2016 13:25:00 +0000</pubDate>
+        <link>
+        /smartmockups-maquettes-a-votre-image</link>
+        <guid isPermaLink="true">/smartmockups-maquettes-a-votre-image</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>DROWN, une nouvelle faille pour OpenSSL</title>
+        
+          <description>&lt;h3 id=&quot;résumé&quot;&gt;Résumé&lt;/h3&gt;
+
+</description>
+        
+        <pubDate>Wed, 02 Mar 2016 17:12:00 +0000</pubDate>
+        <link>
+        /drown-nouvelle-faille-openssl</link>
+        <guid isPermaLink="true">/drown-nouvelle-faille-openssl</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>[Tuto] Supprimer les doublons de votre librairie Google Music</title>
+        
+          <description>&lt;p&gt;J’aime bien Google Music, c’est l’un des seuls services google que j’utilise avec Gmaps. J’ai utilisé leur outil pour transférer ma bibliothèque iTunes (Oui iTunes marche plutôt bien sur Mac.. pas sous windows). Google Music a un double intérêt. Je peux avoir ma musique partout sans avoir mon propre ordi et également de sauvegarde en plus de la  time machine. Cependant, je n’aime pas le Google Music Uploader : il n’est pas assez intelligent pour reconnaître quand une chanson de votre bibliothèque est déjà dans le nuage, donc si jamais vous devez reconfirer l’outil, vous aurez des centaines ou même des milliers de chansons en double. Et jusqu’à ce qu’un ingénieur de Google décide de fixer le problème, vous êtes coincé avec une bibliothèque en désordre et une expérience utilisateur dégradée.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 26 Feb 2016 15:15:00 +0000</pubDate>
+        <link>
+        /tuto-supprimer-les-doublons-de-votre-librairie-google-music</link>
+        <guid isPermaLink="true">/tuto-supprimer-les-doublons-de-votre-librairie-google-music</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Météo mondiale dans votre terminal \ Tuto pour Linux/Mac</title>
+        
+          <description>&lt;h2 id=&quot;les-prévisions-météo-saffichent-aussi-dans-le-terminal&quot;&gt;Les prévisions météo s’affichent aussi dans le terminal&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 18 Feb 2016 14:40:00 +0000</pubDate>
+        <link>
+        /meteo-mondiale-dans-terminal</link>
+        <guid isPermaLink="true">/meteo-mondiale-dans-terminal</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Premiers retours sur Let's Encrypt</title>
+        
+          <description>&lt;p&gt;Suite à mon précédent article : &lt;a href=&quot;https://iserv.fr/tuto-lets-encrypt-sur-centos-7-avec-nginx-https-pour-tous-et-gratuit/&quot;&gt;Tuto Let’s Encrypt sur  Centos 7 avec Nginx&lt;/a&gt; voici mes premiers retours sur Let’s Encrypt.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 25 Jan 2016 13:33:00 +0000</pubDate>
+        <link>
+        /premiers-retours-sur-lets-encrypt</link>
+        <guid isPermaLink="true">/premiers-retours-sur-lets-encrypt</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Tuto Comment installer PHP 7 OS X El Capitan</title>
+        
+          <description>&lt;p&gt;Dans ce court tutoriel, vous apprendrez comment installer la dernière version de PHP7 sur OS X en utilisant homebrew et comment le configurer dans le serveur Apache.
+Vous pourriez vous demander en premier lieu, pourquoi se donner la peine de l’installer.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 18 Jan 2016 08:57:00 +0000</pubDate>
+        <link>
+        /tuto-comment-installer-php-7-os-x-el-capitan</link>
+        <guid isPermaLink="true">/tuto-comment-installer-php-7-os-x-el-capitan</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Tuto Let's Encrypt sur Centos 7 avec Nginx, Https pour tous et gratuit !</title>
+        
+          <description>&lt;p&gt;Voici un tuto pour Let’s Encrypt qui est actuellement en version bêta publique et vous pouvez obtenir des certificats SSL valides et vérifiés pour vos domaines, gratuitement pour une durée de vie. Je sais que, même si je n’y ai pas cru la première fois, c’est vrai. C’est gratuit et libre.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 31 Dec 2015 13:04:00 +0000</pubDate>
+        <link>
+        /tuto-lets-encrypt-sur-centos-7-avec-nginx-https-pour-tous-et-gratuit</link>
+        <guid isPermaLink="true">/tuto-lets-encrypt-sur-centos-7-avec-nginx-https-pour-tous-et-gratuit</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Chronique Star Wars VII Le Réveil de la Force</title>
+        
+          <description>&lt;p&gt;&lt;em&gt;Cette critique est garantie sans spoils de ce dernier épisode.&lt;/em&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 21 Dec 2015 08:52:00 +0000</pubDate>
+        <link>
+        /chronique-star-wars-vii-le-reveil-de-la-force</link>
+        <guid isPermaLink="true">/chronique-star-wars-vii-le-reveil-de-la-force</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ready for HTTP2 with Nginx on Centos 7</title>
+        
+          <description>&lt;h2 id=&quot;quest-ce-que-http2-&quot;&gt;Qu’est-ce que HTTP2 ?&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 11 Dec 2015 16:20:00 +0000</pubDate>
+        <link>
+        /ready-for-http2-with-nginx-on-centos-7</link>
+        <guid isPermaLink="true">/ready-for-http2-with-nginx-on-centos-7</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Adieu Dropbox !</title>
+        
+          <description>&lt;p&gt;Depuis 2007, Dropbox est devenue l’une des références de la sauvegarde pour les particuliers et du partage de fichiers. Après des années d’utilisation, je n’ai pas été déçu par le logiciel Dropbox mais plutôt par sa politique américaine et par le fait que mes données personnelles soient stockées sur des serveurs américains. Donc adieu Dropbox… pour mes données, je ne suis plus dépendant de dropbox pour partager mes données dans le cadre de mon master maintenant que j’ai réussi :-).&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 15 Jul 2015 11:36:00 +0000</pubDate>
+        <link>
+        /adieu-dropbox</link>
+        <guid isPermaLink="true">/adieu-dropbox</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Installation du serveur MariaDB</title>
+        
+          <description>&lt;h4 id=&quot;tuto-mariadb--installation-du-serveur-mariadb-via-la-commande-suivante&quot;&gt;Tuto MariaDB : Installation du serveur MariaDB via la commande suivante&lt;/h4&gt;
+
+</description>
+        
+        <pubDate>Tue, 14 Jul 2015 11:28:00 +0000</pubDate>
+        <link>
+        /installation-du-serveur-mariadb</link>
+        <guid isPermaLink="true">/installation-du-serveur-mariadb</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>infinite.io</title>
+        
+          <description>&lt;p&gt;Aujourd’hui je souhaite vous présenter &lt;strong&gt;infinit.io&lt;/strong&gt; un outil d’échange de fichier P2P.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 11 Jul 2015 09:54:00 +0000</pubDate>
+        <link>
+        /infinite-io</link>
+        <guid isPermaLink="true">/infinite-io</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Bonjour Ghost</title>
+        
+          <description>&lt;p&gt;Pour motoriser ce site, j’ai décidé d’abandonner Jekyll, qui pourtant, m’a rendu un grand service. Jekyll, c’est un véritable bonheur à utiliser, je l’ai découvert grâce à la &lt;em&gt;&lt;a href=&quot;https://www.sheevaboite.fr/&quot;&gt;sheevaboite&lt;/a&gt;&lt;/em&gt;, un très bon site sur l’auto hebergement.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 10 May 2015 10:13:00 +0000</pubDate>
+        <link>
+        /bonjour-ghost</link>
+        <guid isPermaLink="true">/bonjour-ghost</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Re-design</title>
+        
+          <description>&lt;p&gt;Bienvenue, sur le nouveau design de mon blog &lt;em&gt;iServ.fr&lt;/em&gt;.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 01 May 2015 10:12:00 +0000</pubDate>
+        <link>
+        /re-design</link>
+        <guid isPermaLink="true">/re-design</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>iServ en SSL</title>
+        
+          <description>&lt;p&gt;Le site iServ.fr est accessible de manière sécurisé avec le protocole &lt;strong&gt;HTTPS&lt;/strong&gt;. Ce n’est pas parce que je suis un féru de sécurité mais parce que j’avais envie d’apprendre.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 11 Jan 2015 11:17:00 +0000</pubDate>
+        <link>
+        /iserv-en-ssl</link>
+        <guid isPermaLink="true">/iserv-en-ssl</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Nouvelle année 2015</title>
+        
+          <description>&lt;p&gt;Le site &lt;em&gt;iServ.fr&lt;/em&gt; a fêté ses 1 an avec ma totale … indifférence. En fait, j’ai tout simplement oublié la date de création…
+Ce n’était pas possible de laisser cet oubli, du coup j’ai pris mon petit éditeur de texte favori (&lt;em&gt;vim&lt;/em&gt;) et j’ai quelque peu modifié le thème, dont vous voyez le résultat. Si la mode est au “flat design”, pour moi ce sera du “white design”.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 01 Jan 2015 10:26:00 +0000</pubDate>
+        <link>
+        /nouvelle-annee-2015</link>
+        <guid isPermaLink="true">/nouvelle-annee-2015</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Interstellar avant-première critique</title>
+        
+          <description>&lt;p&gt;Je viens de voir &lt;a href=&quot;https://cinemur.fr/film/interstellar-226727&quot; target=&quot;_blank&quot;&gt;Interstellar&lt;/a&gt;. Et j’ai vraiment beaucoup aimé.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 25 Nov 2014 09:55:00 +0000</pubDate>
+        <link>
+        /interstellar-avant-premiere-critique</link>
+        <guid isPermaLink="true">/interstellar-avant-premiere-critique</guid>
+      </item>
+      
+    
+  </channel>
+</rss>

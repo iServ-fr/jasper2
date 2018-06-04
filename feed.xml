@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="/jasper2/feed.xml" rel="self" type="application/atom+xml" /><link href="/jasper2/" rel="alternate" type="text/html" /><updated>2018-06-04T10:24:48+00:00</updated><id>/jasper2/</id><title type="html">iServ</title><subtitle>Un blog Tech pour parler des découvertes, expériences, humeurs du moment autour du web et des technologies qui caractérisent ce serveur.</subtitle><entry><title type="html">Installation de SolR 6 sous CentOS</title><link href="/jasper2/installation-de-solr6-sous-linux" rel="alternate" type="text/html" title="Installation de SolR 6 sous CentOS" /><published>2018-05-19T18:49:59+00:00</published><updated>2018-05-19T18:49:59+00:00</updated><id>/jasper2/installation-de-solr6-sous-linux</id><content type="html" xml:base="/jasper2/installation-de-solr6-sous-linux">&lt;p&gt;J’ai souvent utilisé le moteur d’indexation SolR (basé sur lucene) que ce soit pour mes développements ou en production. Nous allons installer la version 6 de SolR et en faire un service, pour que SolR soit plus facilement gérable en ligne de commande.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;J’ai hésité à publier cet article, car SolR en est à sa version 7 mais j’ai constaté que la version 6 intéresse et est toujours utilisée dans beaucoup de projets.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;installation&quot;&gt;Installation&lt;/h1&gt;
+&lt;p&gt;Tout d’abord, vérifier si vous avez la version 1.8 ou + du JRE (Java Runtime Environment), avec un petit &lt;code class=&quot;highlighter-rouge&quot;&gt;java -version&lt;/code&gt; dans votre terminal.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/05/javaversion.png&quot; alt=&quot;javaversion&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ensuite, vous pouvez récupérer la version de solr 6 que vous souhaitez (en remplaçant les x et y par votre version):&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget http://archive.apache.org/dist/lucene/solr/6.x.y/solr-6.x.y.tgz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Après avoir récupéré votre version de solr, lancez cette commande pour récupérer le script d’installation dans le dossier courant.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xzf solr-6.x.y.tgz solr-x.y.0/bin/install_solr_service.sh &lt;span class=&quot;nt&quot;&gt;--strip-components&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Et on lance le script d’installation:&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;bash ./install_solr_service.sh solr-6.3.0.tgz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Votre instance de solr est maintenant disponible à l’adresse: http://nomdedomaine:8983/solr&lt;/p&gt;
+
+&lt;p&gt;A noter qu’il peut y avoir des problèmes au niveau du firewall&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;firewall-cmd &lt;span class=&quot;nt&quot;&gt;--zone&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;public &lt;span class=&quot;nt&quot;&gt;--add-port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8983/tcp &lt;span class=&quot;nt&quot;&gt;--permanent&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;firewall-cmd &lt;span class=&quot;nt&quot;&gt;--reload&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;création-du-service&quot;&gt;Création du service&lt;/h1&gt;
+&lt;p&gt;Lors de l’installation, un service solr a été crée et son script de démarrage se trouve dans le dossier /etc/init.d .
+S’il n’existe pas, il faut donc créer le fichier /etc/init.d/solr avec le contenu suivant:&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;SOLR_INSTALL_DIR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/opt/solr
+&lt;span class=&quot;nv&quot;&gt;SOLR_ENV&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/etc/default/solr.in.sh
+&lt;span class=&quot;nv&quot;&gt;RUNAS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;solr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;SOLR_INSTALL_DIR correspond au dossier d’installation de SolR&lt;/li&gt;
+  &lt;li&gt;SOLR_ENV correspond au fichier contenant les variables d’environnements&lt;/li&gt;
+  &lt;li&gt;RUNAS correspond au nom du service
+Il vous faut l’adapter à vos besoins :)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Vous pouvez maintenant gérer SolR comme n’importe quel service, en ligne de commande:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo service solr start&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo service solr stop&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo service solr restart&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;sécurité&quot;&gt;Sécurité&lt;/h1&gt;
+&lt;h6 id=&quot;via-htacess&quot;&gt;Via htacess&lt;/h6&gt;
+&lt;p&gt;Pour sécuriser votre installation de SolR, vous pouvez mettre en place un htpasswd via apache en ajoutant les lignes suivantes dans votre vhost&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;AuthType Basic
+AuthName &lt;span class=&quot;s2&quot;&gt;&quot;Restricted Content&quot;&lt;/span&gt;
+AuthUserFile /etc/httpd/.htpasswd
+Require valid-user
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;via-iptables&quot;&gt;Via iptables&lt;/h6&gt;
+
+&lt;p&gt;L’autre solution est de passer par iptables&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;iptables &lt;span class=&quot;nt&quot;&gt;-A&lt;/span&gt; INPUT &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; tcp &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; localhost &lt;span class=&quot;nt&quot;&gt;--dport&lt;/span&gt; 8983 &lt;span class=&quot;nt&quot;&gt;-j&lt;/span&gt; ACCEPT
+iptables &lt;span class=&quot;nt&quot;&gt;-A&lt;/span&gt; INPUT &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; tcp &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; votre.adresse.ip.ici &lt;span class=&quot;nt&quot;&gt;--dport&lt;/span&gt; 8983 &lt;span class=&quot;nt&quot;&gt;-j&lt;/span&gt; ACCEPT
+iptables &lt;span class=&quot;nt&quot;&gt;-A&lt;/span&gt; INPUT &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; tcp &lt;span class=&quot;nt&quot;&gt;--dport&lt;/span&gt; 8983 &lt;span class=&quot;nt&quot;&gt;-j&lt;/span&gt; DROP
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;La première commande iptables accepte toutes les connexions de localhost sur le port 8983, la seconde accepte les connexions depuis votre ip, et la dernière dit à iptables d’abandonner tout le trafic au port 8983. 
+Iptables obéit aux règles de haut en bas donc, les trafics depuis localhost et depuis votre ip, sont laissés passer, le reste est refusé.
+Pour enregistrer ces règles de manière permanente (afin qu’elles persistent après un redémarrage), assurez-vous de sauvegarder la configuration du pare-feu avec &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo service iptables save&lt;/code&gt;.&lt;/p&gt;</content><author><name>Sébastien Chaptal</name></author><category term="tuto" /><summary type="html">J’ai souvent utilisé le moteur d’indexation SolR (basé sur lucene) que ce soit pour mes développements ou en production. Nous allons installer la version 6 de SolR et en faire un service, pour que SolR soit plus facilement gérable en ligne de commande.</summary></entry><entry><title type="html">Neutralité du net, les terminaux</title><link href="/jasper2/neutralite-du-net-les-terminaux" rel="alternate" type="text/html" title="Neutralité du net, les terminaux" /><published>2018-05-02T17:30:00+00:00</published><updated>2018-05-02T17:30:00+00:00</updated><id>/jasper2/neutralite-du-net-les-terminaux</id><content type="html" xml:base="/jasper2/neutralite-du-net-les-terminaux">&lt;p&gt;L’ARCEP met en garde contre l’accès limité à internet qu’offrent les smartphones, tablettes et assistants vocaux dans son rapport de février 2018. Pourquoi l’autorité des télécoms s’attaque aux terminaux ? Parce qu’elle est la garante de la neutralité du net et qu’elle considère les terminaux comme des opérateurs, les uns comme les autres conditionnant l’accès aux contenus et services.&lt;/p&gt;
+
+&lt;p&gt;Lors de la création de l’ARCEP, il y a 22 ans, c’était les états qui étaient les grands freins à la liberté du net. Maintenant, ce sont de grands groupes qui occupent ce rôle.
+Le rapport publié se veut avant tout « un travail de constat », dixit Sébastien Soriano, président de l’ARCEP.&lt;/p&gt;
+
+&lt;p&gt;Les objectifs du chantier sont :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;d’évaluer l’influence des terminaux sur l’accès à internet et cartographier les limites à l’ouverture d’internet&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;de proposer des mesures qui pourraient être mises en œuvre à l’échelle nationale ou européenne pour remédier aux éventuelles défaillances identifiées.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Vous pouvez retrouver un &lt;a href=&quot;https://www.arcep.fr/uploads/tx_gspublication/bande-dessinee-terminaux-fev2018.pdf&quot;&gt;résumé en bd&lt;/a&gt;, le &lt;a href=&quot;https://www.arcep.fr/uploads/tx_gspublication/rapport-terminaux-fev2018.pdf&quot;&gt;rapport complet en pdf&lt;/a&gt;, ainsi que &lt;a href=&quot;https://video.arcep.fr/fr/afterwork-devices-2018&quot;&gt;la conférence en VOD&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;On ne peut que vous conseillez d’aller y jeter un oeil pour vous faire votre propre opinion.&lt;/p&gt;
+
+&lt;p&gt;Vous povez également aller un faire un tour sur:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;next impact: https://www.nextinpact.com/news/106151-sur-terminaux-arcep-pousse-murs-sa-regulation.htm&lt;/li&gt;
+  &lt;li&gt;la tribune: https://www.latribune.fr/technos-medias/pour-l-arcep-les-smartphones-sont-le-maillon-faible-d-un-internet-ouvert-768687.html&lt;/li&gt;
+  &lt;li&gt;internet actu: http://internetactu.blog.lemonde.fr/2018/02/16/de-la-neutralite-du-net-a-celle-des-terminaux/&lt;/li&gt;
+  &lt;li&gt;les échos du net: https://www.echosdunet.net/breve/89955-larcep-veut-reguler-terminaux&lt;/li&gt;
+  &lt;li&gt;iGénération: https://www.igen.fr/telecoms/2018/02/arcep-les-terminaux-noffrent-lutilisateur-quun-acces-limite-internet-103017&lt;/li&gt;
+  &lt;li&gt;ZDNet: http://www.zdnet.fr/actualites/neutralite-des-terminaux-apres-les-tuyaux-l-arcep-veut-se-pencher-sur-les-robinets-39864330.htm&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Sébastien Chaptal</name></author><category term="societe" /><summary type="html">L’ARCEP met en garde contre l’accès limité à internet qu’offrent les smartphones, tablettes et assistants vocaux dans son rapport de février 2018. Pourquoi l’autorité des télécoms s’attaque aux terminaux ? Parce qu’elle est la garante de la neutralité du net et qu’elle considère les terminaux comme des opérateurs, les uns comme les autres conditionnant l’accès aux contenus et services.</summary></entry><entry><title type="html">Signer ses commits avec GPG</title><link href="/jasper2/signer-ses-commits-avec-gpg" rel="alternate" type="text/html" title="Signer ses commits avec GPG" /><published>2018-04-23T17:00:00+00:00</published><updated>2018-04-23T17:00:00+00:00</updated><id>/jasper2/signer-ses-commits-avec-gpg</id><content type="html" xml:base="/jasper2/signer-ses-commits-avec-gpg">&lt;p&gt;Ajourd’hui, un article sur git et les commits (encore ?!).
+Oui, encore. Mais là, c’est pour avoir une jolie, une jolie, …
+Mais une jolie signature voyons.&lt;/p&gt;
+
+&lt;p&gt;Imaginez (oui, je sais ce n’est pas facile, surtout si vous lisez cet article de bon matin), vous flanez sur github, vous tombez sur un projet qui vous interesse, vous regardez les commits et sur l’un d’entre eux, vous voyez ça:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/04/verifiedcommit.png&quot; alt=&quot;verifiedcommit&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Alors là deux réactions possibles:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/04/meh.jpeg&quot; alt=&quot;meh&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ou si vous êtes comme moi
+&lt;img src=&quot;/assets/images/2018/04/gloriousImg.jpeg&quot; alt=&quot;gloriousImg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Si vous êtes dans la première réaction et bien comment dire, hmm, je ne pense pas que le reste de l’article va vous intérresser (et surtout, vous n’avez pas vraiment lu le titre de l’article non … allez je suis sympa, voila un lien vers &lt;a href=&quot;https://lesjoiesducode.fr&quot;&gt;les joies du code&lt;/a&gt;, c’est cadeau et ça fait toujours plaisir).
+Pour les autres, c’est parti ;)&lt;/p&gt;
+
+&lt;h3 id=&quot;installation-de-gpg&quot;&gt;Installation de gpg&lt;/h3&gt;
+
+&lt;p&gt;Tapez&lt;/p&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;gpg --help
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Si vous avez l’aide qui s’affiche, cela veut dire que vous avez gpg d’installer, vous pouvez sauter l’étape d’installation.&lt;/p&gt;
+
+&lt;p&gt;Sinon&lt;/p&gt;
+&lt;h6 id=&quot;sous-mac&quot;&gt;Sous mac:&lt;/h6&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;brew install gpg
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;sous-fedora&quot;&gt;Sous fedora:&lt;/h6&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;dnf install gnupg2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Pour en savoir plus:
+https://doc.fedora-fr.org/wiki/GnuPG_:_Signature_et_Chiffrement&lt;/p&gt;
+
+&lt;h6 id=&quot;sous-ubuntudebian&quot;&gt;Sous ubuntu/Debian:&lt;/h6&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;apt-get install gnupg2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Pour en savoir plus:
+https://doc.ubuntu-fr.org/gnupg&lt;/p&gt;
+
+&lt;h3 id=&quot;création-de-la-clé-gpg&quot;&gt;Création de la clé GPG&lt;/h3&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;gpg --gen-key
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Rentrez un nom et une adresse mail
+Vous allez devoir rentrer votre passphrase (faites en sorte qu’elle soit un minimum robuste quand même, c’est un peu votre rempart pour votre identité).&lt;/p&gt;
+
+&lt;p&gt;Il vous reste à ajouter dans la configuration de git votre clé et le fait que vous voulez pouvoir signer vos commits.&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;git config --global user.signingKey &amp;lt;COLLER_VOTRE_CLE_ICI&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;git config --global commit.gpgsign true
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Dans la plupart des cas, il suffit de faire&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;git commit -a -S -m 'commit signé'
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;et tada, ça marche et tout va bien.&lt;/p&gt;
+
+&lt;h3 id=&quot;les-difficultés-rencontrées&quot;&gt;Les difficultés rencontrées&lt;/h3&gt;
+
+&lt;p&gt;Tout d’abord, je tiens à préciser que je suis sous MacOS et que mes tests ont été effectués dans le but d’avoir un commit signé sur un projet github.&lt;/p&gt;
+
+&lt;p&gt;Bon, comment vous dire que … non, ça ne suffit pas m … morbleu, voila (oui, j’ose le dire).&lt;/p&gt;
+
+&lt;p&gt;Lors de mes premières tentatives, j’ai fait face à:&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;error: gpg failed to sign the data 
+fatal: failed to write commit object
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;La solution que j’ai pu trouver:&lt;/p&gt;
+
+&lt;p&gt;Une librairie à installer&lt;/p&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;brew install pinentry-mac
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;truc un peu spécial, il faut au minimum de redémarrer la console pour que cela fonctionne (moi j’ai carrement redémarrer ma machine, au cas où).
+Et cela fonctionne.&lt;/p&gt;
+
+&lt;p&gt;Si vous voulez travailler avec github, il ne faut pas oublier d’ajouter votre clé GPG dans la configuration de votre compte Github.
+Un lien qui m’a vraiment aidé pour le faire.
+https://help.github.com/articles/telling-git-about-your-gpg-key/&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;i class=&quot;em em-bulb&quot;&gt;&lt;/i&gt;Dernière remarque: ce qui est rare est d’autant plus précieux. N’allez pas signer tous vos commits à tort et à travers, cela rendrait votre signature moins pertinente &lt;i class=&quot;em em-smile&quot;&gt;&lt;/i&gt;
+« &lt;em&gt;Signer chaque commit est totalement stupide. Cela veut juste dire que vous l’automatisez, la signature a donc bien moins de valeur&lt;/em&gt; » dans &lt;a href=&quot;http://git.661346.n2.nabble.com/GPG-signing-for-git-commit-td2582986.html#a2583316&quot;&gt;un message en 2009&lt;/a&gt; de &lt;a href=&quot;https://fr.wikipedia.org/wiki/Linus_Torvalds&quot;&gt;Linus Torvalds&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&quot;bibliographie&quot;&gt;Bibliographie&lt;/h5&gt;
+&lt;p&gt;Github: https://help.github.com/articles/generating-a-new-gpg-key/ , 
+https://help.github.com/articles/signing-commits-with-gpg/
+Stackoverflow: https://stackoverflow.com/questions/39494631/gpg-failed-to-sign-the-data-fatal-failed-to-write-commit-object-git-2-10-0
+Git: https://git-scm.com/book/fr/v2/Utilitaires-Git-Signer-votre-travail
+NextImpact: https://www.nextinpact.com/news/99365-github-affiche-maintenant-signature-gpg-commits-et-etiquettes.htm
+Un lien vers le projet github crée pour cet article:
+https://github.com/chapseb/postGPG
+et pour voir le “fameux” commit signé c’est par &lt;a href=&quot;https://github.com/chapseb/postGPG/commits/master&quot;&gt;ici&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pour aller plus loin sur GPG: https://ungeek.fr/gpg-et-le-chiffrement-pour-tous/&lt;/p&gt;</content><author><name>Sébastien Chaptal</name></author><category term="tuto" /><category term="decouverte" /><category term="securite" /><summary type="html">Ajourd’hui, un article sur git et les commits (encore ?!). Oui, encore. Mais là, c’est pour avoir une jolie, une jolie, … Mais une jolie signature voyons.</summary></entry><entry><title type="html">Installer redis pour votre projet Symfony sur CentOS 7</title><link href="/jasper2/installer-redis-pour-symfony-centos" rel="alternate" type="text/html" title="Installer redis pour votre projet Symfony sur CentOS 7" /><published>2018-04-13T17:00:00+00:00</published><updated>2018-04-13T17:00:00+00:00</updated><id>/jasper2/installer-redis-pour-symfony-centos</id><content type="html" xml:base="/jasper2/installer-redis-pour-symfony-centos">&lt;p&gt;Comme beaucoup, vous avez du déjà voir passer le mot “redis”, au moins dans des articles ou dans des réunions avec des adminsys. Redis est un système de gestion de base de données clef-valeur scalable, très hautes performances, écrit en C ANSI et distribué sous licence BSD.&lt;/p&gt;
+
+&lt;p&gt;Sa vitesse et sa facilité d’utilisation en font l’une des solutions les plus populaires de système de cache pour toutes les applications qui nécessitent de bonnes performances et notamment les applications web qui ont besoin d’afficher des pages très rapidement.&lt;/p&gt;
+
+&lt;p&gt;En plus, si vous voulez l’intégrer à votre projet Symfony, ce n’est pas très compliqué :)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/04/allonsy.gif&quot; alt=&quot;allonsy&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;installation-de-redis-sur-le-serveur-centos-7&quot;&gt;Installation de redis sur le serveur CentOS 7&lt;/h3&gt;
+
+&lt;h6 id=&quot;ajoutez-le-repo-epel-et-faites-un-yum-update-pour-confirmer-votre-modification&quot;&gt;Ajoutez le repo EPEL et faites un yum update pour confirmer votre modification:&lt;/h6&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;sudo yum install epel-release
+sudo yum update
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;installez-redis&quot;&gt;Installez Redis:&lt;/h6&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;sudo yum install redis
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;démarrer-redis&quot;&gt;Démarrer Redis&lt;/h6&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;sudo systemctl start redis
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;facultatif-&quot;&gt;Facultatif :&lt;/h6&gt;
+&lt;p&gt;Pour démarrer automatiquement Redis au démarrage du serveur (ça peut éviter les mauvaises suprises lors de reboot)&lt;/p&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;sudo systemctl enable redis
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;vous-pouvez-faire-un-test-via-cette-commande&quot;&gt;Vous pouvez faire un test via cette commande:&lt;/h6&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;redis-cli ping
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;si-redis-est-en-cours-dexécution-il-vous-répondra&quot;&gt;Si redis est en cours d’exécution, il vous répondra&lt;/h6&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;PONG
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Remarque: si vous souhaitez faire un cluster redis, je vous conseille le tuto de &lt;a href=&quot;https://www.data-essential.com/setup-a-secured-redis-cluster-on-centos7/&quot;&gt;data-essential&lt;/a&gt; ou de &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-configure-a-redis-cluster-on-centos-7&quot;&gt;digital ocean&lt;/a&gt; qui sont très bien fait.&lt;/p&gt;
+
+&lt;p&gt;Maintenant que redis est installé sur le serveur, occupons nous du projet Symfony.&lt;/p&gt;
+
+&lt;h3 id=&quot;installation-de-sncredisbundle&quot;&gt;Installation de SncRedisBundle&lt;/h3&gt;
+
+&lt;p&gt;Il existe deux versions du bundle, l’une utilisant une extension PHP qu’il vous faudra installer sur votre système d’exploitation, l’autre qui utilise la librairie Phredis (et qui ne nécessite pas l’installation de l’extension).
+C’est de la version Phredis dont il s’agit ici.&lt;/p&gt;
+
+&lt;p&gt;Allez dans le dossier de votre projet symfony avec &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt;.
+Une fois dans votre projet, vous pouvez installer le bundle avec Composer:&lt;/p&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;composer require snc/redis-bundle predis/predis
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ensuite, modifiez le fichier app/AppKernel.php (avec votre éditeur de texte préféré) et ajoutez le nouveau bundle :)&lt;/p&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nv&quot;&gt;$bundles&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// ...
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Snc\RedisBundle\SncRedisBundle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// ...
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;configuration-de-sncredisbundle&quot;&gt;Configuration de SncRedisBundle&lt;/h3&gt;
+&lt;p&gt;Pour stocker vos sessions dans Redis, il vous suffit d’ajouter la configuration ci-dessous:&lt;/p&gt;
+
+&lt;p&gt;dans votre fichier config.yml:&lt;/p&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;snc_redis&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;clients&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;predis&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;default&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;dsn&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;redis://localhost&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;default&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;prefix&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;session&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Vous pouvez configurer beaucoup d’éléments et faire face à de nombreux cas d’utilisation. Pour cela, direction le &lt;a href=&quot;https://github.com/snc/SncRedisBundle/blob/master/Resources/doc/index.md&quot;&gt;README&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Et voila, vous avez votre nouveau système de cache, et ça c’est beau.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/04/youareawesome.jpg&quot; alt=&quot;youareawesome&quot; /&gt;&lt;/p&gt;</content><author><name>Sébastien Chaptal</name></author><category term="php" /><category term="tuto" /><summary type="html">Comme beaucoup, vous avez du déjà voir passer le mot “redis”, au moins dans des articles ou dans des réunions avec des adminsys. Redis est un système de gestion de base de données clef-valeur scalable, très hautes performances, écrit en C ANSI et distribué sous licence BSD.</summary></entry><entry><title type="html">Tig, ta nouvelle interface git en ligne de commande</title><link href="/jasper2/tig-plus-que-git-log" rel="alternate" type="text/html" title="Tig, ta nouvelle interface git en ligne de commande" /><published>2018-04-05T20:02:00+00:00</published><updated>2018-04-05T20:02:00+00:00</updated><id>/jasper2/tig-plus-que-git-log</id><content type="html" xml:base="/jasper2/tig-plus-que-git-log">&lt;p&gt;Vous avez votre projet sous git, vous avez peu à peu construit votre projet, au fur et à mesure des commits ou alors vous avez récupéré un projet git existant sur une plateforme, ouverte ou non, comme github, gitlab, bitbucket, etc.
+Mais pour voir quoi et surtout comment développer, il faut étudier ce qui a été fait auparavant. Et pour cela, il faut se plonger dans … l’historique.&lt;/p&gt;
+
+&lt;p&gt;Lors de mes premiers projets git, j’utilisais le fameux:&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;git log
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Avec comme résultat:
+&lt;img src=&quot;/assets/images/2018/03/gitlog.jpg&quot; style=&quot;width:80%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;C’est pas mal, c’est utile, mais bon …
+c’est moche et on n’a pas tant d’informations que ça et coté interaction … meh.&lt;/p&gt;
+
+&lt;p&gt;Et là, on m’a fait découvrir &lt;a href=&quot;https://github.com/jonas/tig&quot;&gt;Tig&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/04/happiness.jpg&quot; alt=&quot;happiness&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Tig, c’est une interface en mode texte pour git basée sur ncurses (comme &lt;a href=&quot;https://iserv.fr/htop/&quot;&gt;Htop&lt;/a&gt;).
+L’utilisation la plus simple est de simplement taper tig dans votre console, lorsque vous êtes dans un projet git.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/03/tigFirst.jpg&quot; alt=&quot;tigFirst&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;L’affichage par défaut lors du lancement de tig est l’affichage de l’historique. Il s’agit essentiellement d’un journal git, avec un peu d’ASCII-art pour représenter l’historique (vous pouvez masquer l’arborescence avec G). Sans aucun argument, il affiche la branche en cours.&lt;/p&gt;
+
+&lt;p&gt;En appuyant sur &lt;code class=&quot;highlighter-rouge&quot;&gt;Entrée&lt;/code&gt; sur un commit, vous ouvrez ce commit dans une vue diff.&lt;/p&gt;
+
+&lt;h2 id=&quot;comment-on-linstalle-&quot;&gt;Comment on l’installe ?&lt;/h2&gt;
+
+&lt;h4 id=&quot;pour-debian-et-ubuntu&quot;&gt;Pour Debian et Ubuntu:&lt;/h4&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;apt-get install tig
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;pour-centos-et-fedora&quot;&gt;Pour CentOS et Fedora:&lt;/h4&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;yum install tig
+dnf install tig [On Fedora 22+ releases]
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;pour-macos&quot;&gt;Pour MacOS&lt;/h4&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;brew install tig
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;pour-windows&quot;&gt;Pour Windows&lt;/h4&gt;
+&lt;p&gt;Pour utiliser tig sur windows, vous aurez besoin de cygwin, ainsi que les packages nécessaires à la compilation de tig (git, gcc-core, make, libiconv-devel et libncurses-devel).&lt;/p&gt;
+
+&lt;h2 id=&quot;ses-différentes-vues&quot;&gt;Ses différentes vues&lt;/h2&gt;
+
+&lt;h4 id=&quot;tree&quot;&gt;Tree&lt;/h4&gt;
+&lt;p&gt;De la vue principale, vous pouvez aller dans la vue Tree afin de parcourir l’arborescence du projet en utilisant la touche &lt;code class=&quot;highlighter-rouge&quot;&gt;t&lt;/code&gt;. De plus, si vous selectionnez un fichier, appuyez sur &lt;code class=&quot;highlighter-rouge&quot;&gt;entrée&lt;/code&gt;, vous verrez sur la fenêtre de droite le contenu du fichier.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/03/tigtree.jpg&quot; alt=&quot;tigtree&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;status&quot;&gt;Status&lt;/h4&gt;
+&lt;p&gt;Cette vue permet de visualiser le statut des branches de développements. Pour l’exemple, j’ai modifié le fichier Changelog et créé le fichier &lt;code class=&quot;highlighter-rouge&quot;&gt;unfichiercree&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/03/tigstatus.jpg&quot; style=&quot;width:60%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;blame&quot;&gt;Blame&lt;/h4&gt;
+
+&lt;p&gt;Vous voulez savoir qui a foiré votre beau code ou a introduit ce vilain bug ?
+Dès que vous êtes positionné sur un fichier, vous pouvez appuyer sur b et le git blame du fichier sélectionné apparaît. Vous pouvez faire aussi &lt;code class=&quot;highlighter-rouge&quot;&gt;tig blame monfichier&lt;/code&gt; en ligne de commande pour accéder directement au blame du fichier.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/03/gitblame2.jpg&quot; alt=&quot;gitblame2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Il suffit ensuite de sélectionner une ligne et appuyez sur Entrée, et il vous montrera le dernier commit qui a touché cette ligne.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/04/gitblame.jpg&quot; /&gt;
+&lt;em&gt;Quand je découvre que c’est moi qui ait introduit le bug &lt;i class=&quot;em em-smile&quot;&gt;&lt;/i&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;-le-saviez-vous-&quot;&gt;&lt;i class=&quot;em em-bulb&quot;&gt;&lt;/i&gt; Le saviez-vous ?&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Tig s’utilise un peu comme Vim, (oui, j’aime Vim).
+Par exemple pour les recherches, il suffit de taper &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt; et de taper son expression. Si plusieurs sont trouvés, il suffit de taper &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt; pour aller à la prochaine occurence.&lt;/li&gt;
+  &lt;li&gt;En utilisant la commande &lt;code class=&quot;highlighter-rouge&quot;&gt;git log | tig&lt;/code&gt; vous avez un affichage ressemblant furieusement au &lt;code class=&quot;highlighter-rouge&quot;&gt;git log&lt;/code&gt; classique avec en plus une meilleur colorimétrie et un meilleur défilement avec un gros plus, le détail du commit ou votre est placé&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Vous pouvez exécuter tig des 2 façons suivantes depuis le répertoire d’un projet, soit en l’associant avec une commande Git (par exemple git log&lt;/td&gt;
+          &lt;td&gt;tig ou git blame Changelog), soit directement(celle que l’on a vu dans la plupart de nos exemple).&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;raccourcis-clavier&quot;&gt;Raccourcis clavier:&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;changement-de-vue&quot;&gt;Changement de vue&lt;/h6&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Raccourci&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;m&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;vue standard&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;s&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;vue statut comme le git status&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;t&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;montre la vue arborescente du projet&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;g&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;chercher une expression (Grep)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;l&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;montre la vue log&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;d&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;montre le diff du commit&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;h&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;affiche l’aide&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h6 id=&quot;fenêtre-principale&quot;&gt;Fenêtre principale&lt;/h6&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Raccourci&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;D&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Change l’affichage de la date&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Change l’affichage de l’auteur&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;X&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;voir les identifiants des commits&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;C&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Cherry pick un commit&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;,&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Va au commit parent&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h6 id=&quot;dans-toutes-les-vues&quot;&gt;Dans toutes les vues&lt;/h6&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Raccourcis&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;k&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Monte d’une ligne&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;j&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Descendre d’une ligne&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;K&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Commit suivant&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;J&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Commit précédent&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;q&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Quitte la vue actuelle&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h6 id=&quot;dautres-informations&quot;&gt;D’autres informations:&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;Vous pouvez trouver d’autres raccourcis clavier sur : https://devhints.io/tig&lt;/li&gt;
+  &lt;li&gt;Où trouver le « man » de Tig ? https://jonas.github.io/tig/doc/tig.1.html&lt;/li&gt;
+  &lt;li&gt;Où trouver le manuel d’utilisation ? http://jonas.nitro.dk/tig/manual.html&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Sébastien Chaptal</name></author><category term="decouverte" /><summary type="html">Vous avez votre projet sous git, vous avez peu à peu construit votre projet, au fur et à mesure des commits ou alors vous avez récupéré un projet git existant sur une plateforme, ouverte ou non, comme github, gitlab, bitbucket, etc. Mais pour voir quoi et surtout comment développer, il faut étudier ce qui a été fait auparavant. Et pour cela, il faut se plonger dans … l’historique.</summary></entry><entry><title type="html">À propos</title><link href="/jasper2/a-propos" rel="alternate" type="text/html" title="À propos" /><published>2018-03-23T09:55:17+00:00</published><updated>2018-03-23T09:55:17+00:00</updated><id>/jasper2/a-propos</id><content type="html" xml:base="/jasper2/a-propos">&lt;p&gt;Quelques mots, avant que vous ne partiez à l’assaut de nos articles.&lt;/p&gt;
+
+&lt;p&gt;A l’origine, Vincent a décidé de créer iServ pour partager ses trouvailles, ses expérimentations avec l’administration système qu’il a découvert lors des son expérience professionnelle. 
+Il s’est décidé à poster des articles (même si c’était à un rythme très irrégulier, dixit Vincent himself).&lt;/p&gt;
+
+&lt;p&gt;Ici vous trouverez des passionnés de nouvelles technologies.
+Et notre passion, nous la partageons.
+A travers des &lt;a href=&quot;https://iserv.fr/tag/tuto/&quot;&gt;tutos&lt;/a&gt;, des &lt;a href=&quot;https://iserv.fr/tag/decouverte/&quot;&gt;découvertes&lt;/a&gt;, et aussi en vous partageant la vie de &lt;a href=&quot;https://iserv.fr/tag/iserv/&quot;&gt;ce serveur&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Nous vous invitons à regarder assez souvent cette page car notre ligne éditoriale évoluera dans les prochains mois.&lt;/p&gt;
+
+&lt;p&gt;Même s’il y a eu et qu’il y aura encore des évolutions, la fondation reste la même,
+iServ, un blog de geek en fonction des pérégrinations de notre équipe.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bonne lecture !
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Membre de la TeamBlogMTP : les blogueurs de la région Montpelliéraine.
+Du partage, des rencontres, des événements, des apéros, des bons plans …
+TeamBlogMTP&lt;/p&gt;</content><author><name>Sébastien Chaptal</name></author><summary type="html">Quelques mots, avant que vous ne partiez à l’assaut de nos articles.</summary></entry><entry><title type="html">Introduction à Docker: première approche</title><link href="/jasper2/introduction-docker" rel="alternate" type="text/html" title="Introduction à Docker: première approche" /><published>2018-03-22T11:00:00+00:00</published><updated>2018-03-22T11:00:00+00:00</updated><id>/jasper2/introduction-docker</id><content type="html" xml:base="/jasper2/introduction-docker">&lt;p&gt;Bonjour à tous, aujourd’hui nous parlons d’une technologie en vogue, Docker. Que vous soyez développeurs, administrateurs systèmes ou DSI, vous avez certainement entendu parler de Docker. C’est une technologie qui nous interesse et que nous allons étudier un plus intensemment ces prochaines semaines. C’est pour ça que nous en parlons aujourd’hui :)&lt;/p&gt;
+
+&lt;p&gt;Docker est une technologie de container qui s’appuie sur 2 grands principes :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Une image correspond à un instantanée d’une machine (unix/linux) qui a été définie dans un fichier Dockerfile.&lt;/li&gt;
+  &lt;li&gt;Le container est une instance d’une image qui fait tourner un process de manière complètement isolée des autres au sein d’une machine (physique ou virtuelle) équipée du daemon docker.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Il s’agit de la solution de containerisation la plus utilisée au monde. La première version est sortie en mars 2013 et a rapidement suscité beaucoup d’intérêt. Avec de nombreuses contributions sur Github, la version 1.0 est sortie en 2014 et a provoqué quelques bouleversements. Même si on ne considère que seul 10% des entreprises utilisent Docker en production, 30% sont actuellement en test avec l’outil (chiffres qui ont du évoluer, ces derniers datant de mi-20017)&lt;/p&gt;
+
+&lt;p&gt;Les services Cloud comme AWS ou Azure acceptent de plus en plus les conteneurs Docker. Ainsi, plus besoin de lancer un nouveau service EC2 pour déployer votre application ce qui permet de gagner en ressources et en disponibilité.&lt;/p&gt;
+
+&lt;h4 id=&quot;démarrer-avec-docker&quot;&gt;DÉMARRER AVEC DOCKER&lt;/h4&gt;
+&lt;p&gt;Si vous souhaitez vous aussi vous lancer sur Docker, rendez-vous sur le site officiel où un tutoriel vous expliquera les principes de l’outil et ses avantages : https://docs.docker.com/get-started/&lt;/p&gt;
+
+&lt;p&gt;Après, comme dis au début de cet article, nous n’avons pas encore une grosse expertise là dessus.
+Nous écrirons surement un nouvel article dans quelques semaines oû nous résumerons les cas que nous avons pu rencontrer et les enseignements que nous avons pu en tirer. 
+Donc pour résumer, même si Docker est la technologie en vogue et que tout le monde s’arrache, si on trouve que c’est nul, on ne se gènera pas pour le dire :)&lt;/p&gt;
+
+&lt;p&gt;Liens utiles:
+https://www.journaldunet.com/solutions/cloud-computing/1146290-docker-la-technologie-qui-revolutionne-le-cloud/
+https://pro-domo.ddns.net/blog/docker-youre-doing-it-wrong.html
+https://code.tutsplus.com/fr/tutorials/docker-from-the-ground-up-understanding-images–cms-28165&lt;/p&gt;</content><author><name>Sébastien Chaptal</name></author><category term="sysadmin" /><category term="decouverte" /><summary type="html">Bonjour à tous, aujourd’hui nous parlons d’une technologie en vogue, Docker. Que vous soyez développeurs, administrateurs systèmes ou DSI, vous avez certainement entendu parler de Docker. C’est une technologie qui nous interesse et que nous allons étudier un plus intensemment ces prochaines semaines. C’est pour ça que nous en parlons aujourd’hui :)</summary></entry><entry><title type="html">Travailler en local avec Wordpress: Local by Flywheel</title><link href="/jasper2/wordpress-local-byflywheel" rel="alternate" type="text/html" title="Travailler en local avec Wordpress:  Local by Flywheel" /><published>2018-03-18T21:33:36+00:00</published><updated>2018-03-18T21:33:36+00:00</updated><id>/jasper2/wordpress-local-byflywheel</id><content type="html" xml:base="/jasper2/wordpress-local-byflywheel">&lt;p&gt;Pour ceux qui ont déjà eu à travailler en local avec wordpress, vous savez qu’il faut installer MAMP (ou WAMP, ou LAMP, suivant le système d’exploitation) et que ce n’est pas toujours facile. Aujourd’hui, je vais vous faire découvrir une alternative simple pour faire du wordpress en local. Je vais vous parler de Local by Flywheel.&lt;/p&gt;
+
+&lt;p&gt;Local By Flywheel permet grâce à des machines virtuelles, de déployer de multiples instances de WordPress, avec si vous le désirez un certificat SSL et un accès SSH, le tout en quelques clics.&lt;/p&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;Commençons par le téléchargement du logiciel dont vous aurez besoin; rendez-vous sur le site de &lt;a href=&quot;https://local.getflywheel.com&quot;&gt;Flywheel&lt;/a&gt; et lancez le téléchargement en cliquant sur le bouton Download.&lt;/p&gt;
+
+&lt;p&gt;Avant de pouvoir lancer le téléchargement vous allez avoir le choix entre la version d’installation, Mac ou Windows.&lt;/p&gt;
+
+&lt;p&gt;Ensuite, il vous faudra renseigner un formulaire avec plein d’informations. Cependant, une adresse mail suffit pour le valider :)&lt;/p&gt;
+
+&lt;p&gt;Le logiciel est gratuit et le fichier d’installation pèse 475 Mo.&lt;/p&gt;
+
+&lt;p&gt;Ensuite, lancer l’installeur et suivez la procédure d’installation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/03/install_localbyflywheel.png&quot; style=&quot;width:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ici Flywheel va installer tous les éléments techniques et fichiers nécessaire au bon fonctionnement de votre site (serveur local, fichier wordpress, base de données…)&lt;/p&gt;
+
+&lt;h2 id=&quot;créer-son-site&quot;&gt;Créer son site&lt;/h2&gt;
+
+&lt;p&gt;Sur l’écran d’accueil, ajoutez un site.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Le nom de votre site internet: Choisissez ce que vous voulez 😉(j’ai mis iserv, mais sachez que celui-ci ne tourne pas sous wordpress 😊)&lt;/li&gt;
+  &lt;li&gt;Local site/path : l’endroit/dossier où sera stocké votre site sur votre disque dur&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/03/Capture-d-e-cran-2018-03-18-a--13.50.00.png&quot; style=&quot;width:90%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Lors de la mise en place d’une instance, vous pouvez avoir  un environnement de base ou vous pouvez choisir votre version de PHP, de MySQL et le serveur qui le fera tourner (Nginx ou Apache).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/03/Capture-d-e-cran-2018-03-18-a--10.38.42.png&quot; style=&quot;width:90%;&quot; /&gt;
+&lt;i&gt;environnement de base&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/03/Capture-d-e-cran-2018-03-18-a--10.38.49.png&quot; style=&quot;width:90%;&quot; /&gt;
+&lt;i&gt;environnement custom&lt;/i&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pour terminer votre installation, il ne vous reste plus que 3 champs à renseigner:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WordPress Username&lt;/strong&gt; : Identifiant de connexion à votre administration
+&lt;strong&gt;WordPress Password&lt;/strong&gt; : Mot de Passe pour accéder à votre administration
+&lt;strong&gt;WordPress Email&lt;/strong&gt; : Votre adresse email&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/03/Capture-d-e-cran-2018-03-18-a--10.39.23.png&quot; style=&quot;width:90%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;En Option : S’agit-il d’un multisite ? Non par défaut, interessant si vous voulez créer un réseau de sites wordpress&lt;/p&gt;
+
+&lt;p&gt;C’est bon, le nouveau site est créé !&lt;/p&gt;
+
+&lt;h4 id=&quot;recréer-votre-site&quot;&gt;Recréer votre site&lt;/h4&gt;
+
+&lt;p&gt;Si vous avez déjà une instance de wordpress, pour la recréer, il vous suffira:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;d’importer un backup de votre base de données (via l’onglet Database et le bouton Adminer)&lt;/li&gt;
+  &lt;li&gt;de copier votre thème et vos plugins dans le dossier de votre Wordpress, dans respectivement app/public/wp-content/themes et app/public/wp-content/plugins&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Sébastien Chaptal</name></author><category term="decouverte" /><category term="cms" /><summary type="html">Pour ceux qui ont déjà eu à travailler en local avec wordpress, vous savez qu’il faut installer MAMP (ou WAMP, ou LAMP, suivant le système d’exploitation) et que ce n’est pas toujours facile. Aujourd’hui, je vais vous faire découvrir une alternative simple pour faire du wordpress en local. Je vais vous parler de Local by Flywheel.</summary></entry><entry><title type="html">Ghostery, l’extension anti-tracking passe à l’open source</title><link href="/jasper2/ghostery-extension-open-source" rel="alternate" type="text/html" title="Ghostery, l'extension anti-tracking passe à l'open source" /><published>2018-03-15T19:45:10+00:00</published><updated>2018-03-15T19:45:10+00:00</updated><id>/jasper2/ghostery-extension-open-source</id><content type="html" xml:base="/jasper2/ghostery-extension-open-source">&lt;p&gt;Ghostery, une extension pour navigateur web qui empêche le tracking de votre navigation sur le web, a ouvert son code source.&lt;/p&gt;
+
+&lt;p&gt;De nombreuses pages web font appel à de nombreux éléments externes. La plupart du temps, ils servent à suivre l’utilisateur, permettant de savoir au propriétaire du site d’où ils viennent et où vont les internautes transitant par ses pages.&lt;/p&gt;
+
+&lt;p&gt;Ce plugin est disponible pour Firefox, Edge, Chrome, Opera et &lt;a href=&quot;https://cliqz.com/fr/&quot;&gt;Cliqz&lt;/a&gt; (il s’agit de l’entreprise qui a racheté le plugin il y a un peu plus d’un an, ça serait dommage de ne pas mettre l’extension à l’interieur, pour en savoir plus, c’est par &lt;a href=&quot;https://www.lemondeinformatique.fr/actualites/lire-cliqz-rachete-l-extension-anti-tracking-ghostery-67381.html&quot;&gt;ici&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h3 id=&quot;lhistorique&quot;&gt;L’historique&lt;/h3&gt;
+
+&lt;p&gt;Avant le rachat par Cliqz, Ghostery avait en effet un modèle économique particulier: l’extension collectait des données de navigation, plus particulièrement les données relatives aux outils de tracking rencontrés par l’utilisateur, afin de les vendre par la suite aux éditeurs de site web.&lt;/p&gt;
+
+&lt;p&gt;En clair, le but était de recueillir les données des utilisateurs, les anonymiser et les mettre en vente. Couplé à une extension propriétaire, ce modèle économique n’était pas vraiment de nature à inspirer confiance aux utilisateurs.&lt;/p&gt;
+
+&lt;p&gt;Un manque de transparence donnait l’impression que Ghostery jouait un double rôle en promettant la confidentialité des utilisateurs tout en vendant des données à des sociétés de publicité en même temps.&lt;/p&gt;
+
+&lt;h3 id=&quot;du-passé-faisons-table-en-marbre-karadoc-de-vannes&quot;&gt;Du passé faisons table en marbre (Karadoc de Vannes)&lt;/h3&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;fr&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;We’re excited to announce that we’re now officially &lt;a href=&quot;https://twitter.com/hashtag/OpenSource?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#OpenSource&lt;/a&gt;. This change demonstrates Ghostery’s commitment to transparency and creating the best tools for our users. &lt;a href=&quot;https://t.co/g3zDhfcP0Q&quot;&gt;https://t.co/g3zDhfcP0Q&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/GhostyGoesOpen?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#GhostyGoesOpen&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ghostery?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#ghostery&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/security?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#security&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/privacy?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#privacy&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/adblocker?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#adblocker&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/antitracking?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#antitracking&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ai?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#ai&lt;/a&gt; &lt;a href=&quot;https://t.co/G4IvLbgh2E&quot;&gt;pic.twitter.com/G4IvLbgh2E&lt;/a&gt;&lt;/p&gt;&amp;mdash; Ghostery (@Ghostery) &lt;a href=&quot;https://twitter.com/Ghostery/status/971776824228433921?ref_src=twsrc%5Etfw&quot;&gt;8 mars 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Notre objectif est la transparence. Un code source ouvert permet au public de voir comment fonctionne Ghostery et quels types de données sont transmis, une fonctionnalité alignée sur les valeurs incarnées par nos produits eux-mêmes - transparence, perspicacité et contrôle. Au-delà, ce projet apporte une opportunité inestimable à nous et à nos utilisateurs en invitant la communauté numérique à contribuer à notre code, à nous aider à nous améliorer et à nous rejoindre dans nos efforts pour rendre Internet plus propre, plus rapide et plus sûr (extrait du communiqué de Ghostery disponible &lt;a href=&quot;https://www.ghostery.com/fr/blog/product-releases/ghostery-goes-open-source/&quot;&gt;ici&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Le but de cette ouverture est donc double:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;D’une part, l’objectif est de permettre aux utilisateurs de voir comment fonctionne Ghostery et quels types de données il recueille. Cette transparence est essentielle pour effacer les anciennes controverses qui ont pu exister avec l’ancien propriétaire de Ghostery.&lt;/li&gt;
+  &lt;li&gt;D’autre part, l’objectif est de donner la possibilité aux utilisateurs/developpeurs de faire des contributions à son code source. Cela permet de renforcer la communauté autour de son produit.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Vous pouvez faire un tour sur le &lt;a href=&quot;https://github.com/ghostery/ghostery-extension&quot;&gt;github de Ghostery&lt;/a&gt;. Il convient de noter que Ghostery a publié le code pour ses extensions de navigateur uniquement et non pour les applications mobiles.&lt;/p&gt;
+
+&lt;p&gt;En tous cas, il s’agit là d’un beau projet qui nous permettra d’avoir accès aux sites web plus rapidement et de préserver, en plus de nos données personnelles, nos batteries. 
+En effet, moins de trackers, moins de données à charger, moins de conso :)&lt;/p&gt;
+
+&lt;p&gt;Et en prime, un exemple d’utilisation de ghostery sur iserv&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/03/ghosterySansRessourcesExterne.png&quot; alt=&quot;ghosterySansRessourcesExterne&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Sans contenu externe&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/03/ghosteryAvecRessourcesExterne.jpg&quot; alt=&quot;ghosteryAvecRessourcesExterne&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Avec du contenu externe&lt;/em&gt; :)&lt;/p&gt;</content><author><name>Sébastien Chaptal</name></author><category term="decouverte" /><category term="opensource" /><summary type="html">Ghostery, une extension pour navigateur web qui empêche le tracking de votre navigation sur le web, a ouvert son code source.</summary></entry><entry><title type="html">History’s Creed: histoire et jeux vidéo, pour le meilleur ou pour le pire ?</title><link href="/jasper2/historys-creed-histoire-et-jeux-videos" rel="alternate" type="text/html" title="History’s Creed: histoire et jeux vidéo, pour le meilleur ou pour le pire ?" /><published>2018-03-11T20:00:00+00:00</published><updated>2018-03-11T20:00:00+00:00</updated><id>/jasper2/historys-creed-histoire-et-jeux-videos</id><content type="html" xml:base="/jasper2/historys-creed-histoire-et-jeux-videos">&lt;p&gt;Aujourd’hui, un article un peu différent. En effet, il s’agit d’un partenariat entre Arte Creative et le vulgarisateur/youtubeur en Histoire, &lt;a href=&quot;https://www.youtube.com/user/notabenemovies&quot;&gt;Nota Bene&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;C’est un Nota Bene pixélisé qui vous emmenera tout au long de la dizaine d’épisodes de History’s creed (avec une thématique par épisode).
+La reconstitution historique fidèle dans les jeux vidéo, les clichés que l’on peut rencontrer, ou même si l’on peut inscrire les jeux vidéo dans des projets pédagogiques, sont des sujets que vous rencontrerez tout au long de la série history’s creed, avec les différents acteurs du jeu vidéo.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Nota Bene” est une des chaînes historiques francophones de YouTube parmi les plus suivies de la plateforme avec ses 622.000 abonnées. Benjamin Brillaud a lancé sa chaîne en 2014 dans une optique de vulgarisation de sa passion, l’Histoire.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;iframe allowfullscreen=&quot;true&quot; style=&quot;transition-duration:0;transition-property:no;margin:0 auto;position:relative;display:block;background-color:#000000;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; width=&quot;720&quot; height=&quot;406&quot; src=&quot;https://www.arte.tv/player/v3/index.php?json_url=https%3A%2F%2Fapi.arte.tv%2Fapi%2Fplayer%2Fv1%2Fconfig%2Ffr%2F074699-001-A%3Fautostart%3D0%26lifeCycle%3D1&amp;amp;lang=fr_FR&amp;amp;embed=1&amp;amp;mute=0&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;“History’s Creed’, la mini-série en 10 épisodes à regarder sur &lt;a href=&quot;https://www.arte.tv/fr/videos/RC-014308/history-s-creed/&quot;&gt;Arte&lt;/a&gt;.
+Elle est également disponible sur &lt;a href=&quot;https://www.youtube.com/watch?v=e5vG-7lzHWU&amp;amp;list=PLgLm3t2YjNL2LvpXMliEdJy60hkC2c-4u&quot;&gt;la chaine Youtube de Nota Bene&lt;/a&gt;.&lt;/p&gt;</content><author><name>Sébastien Chaptal</name></author><category term="societe" /><summary type="html">Aujourd’hui, un article un peu différent. En effet, il s’agit d’un partenariat entre Arte Creative et le vulgarisateur/youtubeur en Histoire, Nota Bene.</summary></entry></feed>
