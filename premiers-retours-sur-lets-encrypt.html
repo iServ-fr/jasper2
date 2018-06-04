@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>Premiers retours sur Let's Encrypt</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/syntax.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="/jasper2/assets/css/default.min.css">
+    <link rel="stylesheet" href="/jasper2/assets/css/emoji.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="Un blog Tech pour parler des découvertes, expériences, humeurs du moment autour du web et des technologies qui caractérisent ce serveur." />
+    <link rel="shortcut icon" href="/jasper2/assets/images/2017/11/iServ_square_ublue.png" type="image/png" />
+    <link rel="canonical" href="/jasper2/premiers-retours-sur-lets-encrypt" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="iServ" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Premiers retours sur Let's Encrypt" />
+    <meta property="og:description" content="Suite à mon précédent article : Tuto Let’s Encrypt sur  Centos 7 avec Nginx voici mes premiers retours sur Let’s Encrypt. J’ai réalisé cet article à la suite de mes recherches afin d’obtenir la note maximale aux tests SSLLabs ou sur CryptCheck. Test SSLLabs de IServ.fr Test cryptCheck de IServ.fr Des" />
+    <meta property="og:url" content="/jasper2/premiers-retours-sur-lets-encrypt" />
+    <meta property="og:image" content="/jasper2/assets/images/2018/02/lets-encrypt.jpg" />
+    <meta property="article:publisher" content="https://www.facebook.com/false" />
+    <meta property="article:author" content="https://www.facebook.com/false" />
+    <meta property="article:published_time" content="2016-01-25T13:33:00+00:00" />
+    <meta property="article:modified_time" content="2016-01-25T13:33:00+00:00" />
+    <meta property="article:tag" content="Sysadmin" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Premiers retours sur Let's Encrypt" />
+    <meta name="twitter:description" content="Suite à mon précédent article : Tuto Let’s Encrypt sur  Centos 7 avec Nginx voici mes premiers retours sur Let’s Encrypt. J’ai réalisé cet article à la suite de mes recherches afin d’obtenir la note maximale aux tests SSLLabs ou sur CryptCheck. Test SSLLabs de IServ.fr Test cryptCheck de IServ.fr Des" />
+    <meta name="twitter:url" content="/jasper2/" />
+    <meta name="twitter:image" content="/jasper2/assets/images/2018/02/lets-encrypt.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="iServ" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Sysadmin" />
+    <meta name="twitter:site" content="@iservblog" />
+    <meta name="twitter:creator" content="@iservblog" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "iServ",
+        "logo": "/jasper2/assets/images/2018/02/iServ_w-1.png"
+    },
+    "url": "/jasper2/premiers-retours-sur-lets-encrypt",
+    "image": {
+        "@type": "ImageObject",
+        "url": "/jasper2/assets/images/2018/02/lets-encrypt.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/jasper2/premiers-retours-sur-lets-encrypt"
+    },
+    "description": "Suite à mon précédent article : Tuto Let’s Encrypt sur  Centos 7 avec Nginx voici mes premiers retours sur Let’s Encrypt. J’ai réalisé cet article à la suite de mes recherches afin d’obtenir la note maximale aux tests SSLLabs ou sur CryptCheck. Test SSLLabs de IServ.fr Test cryptCheck de IServ.fr Des"
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="Premiers retours sur Let's Encrypt" href="/jasper2/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="/jasper2/"><img src="/jasper2/assets/images/2018/02/iServ_w-1.png" alt="iServ" /></a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/jasper2/">Accueil</a></li>
+    <li class="nav-about" role="menuitem"><a href="/jasper2/a-propos/">A propos</a></li>
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+                <a class="social-link social-link-tw" href="https://twitter.com/iservblog" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            
+        </div>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="25 January 2016">25 January 2016</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/jasper2/tag/sysadmin/'>SYSADMIN</a>,
+                            
+                        
+                            
+                               <a href='/jasper2/tag/tuto/'>TUTO</a>,
+                            
+                        
+                            
+                               <a href='/jasper2/tag/iserv/'>ISERV</a>,
+                            
+                        
+                            
+                               <a href='/jasper2/tag/opensource/'>OPENSOURCE</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">Premiers retours sur Let's Encrypt</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/jasper2/assets/images/2018/02/lets-encrypt.jpg)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <p>Suite à mon précédent article : <a href="https://iserv.fr/tuto-lets-encrypt-sur-centos-7-avec-nginx-https-pour-tous-et-gratuit/">Tuto Let’s Encrypt sur  Centos 7 avec Nginx</a> voici mes premiers retours sur Let’s Encrypt.</p>
+
+<p>J’ai réalisé cet article à la suite de mes recherches afin d’obtenir la note maximale aux tests <a href="https://www.ssllabs.com/ssltest/">SSLLabs</a> ou sur <a href="https://tls.imirhil.fr/">CryptCheck</a>.</p>
+
+<p><a href="https://www.ssllabs.com/ssltest/analyze.html?d=iserv.fr">Test SSLLabs de IServ.fr</a></p>
+
+<p><img src="/content/images/2018/02/SSLLabsiServ.png" alt="SSL LABS TEST" /></p>
+
+<p><a href="https://tls.imirhil.fr/https/www.iserv.fr">Test cryptCheck de IServ.fr</a></p>
+
+<h3 id="des-paramètres-par-défaut-insuffisants">Des paramètres par défaut insuffisants</h3>
+
+<p>Déjà, les paramètres par défaut de Let’s Encrypt ne sont pas corrects. Pourtant, tout le monde sait, en particulier dans le monde de la crypto, qu’un outil de crypto est correct quand sa configuration par défaut est correcte, la plupart des utilisateurs n’allant de toute façon jamais la modifier.</p>
+
+<p>Par exemple, l’outil génère par défaut des clefs RSA de 2048 bits. Cette taille est dorénavant très insuffisante, et <a href="http://www.ssi.gouv.fr/uploads/2015/01/RGS_v-2-0_B1.pdf">déconseillée officiellement par l’ANSSI</a> au profit de clefs d’au moins 3072 bits. Certes, vos machines ne réclament sûrement pas un niveau de sécurité digne d’Edward Snowden, mais il ne sert à rien de rester dans la zone rouge de la crypto surtout quand l’usage d’une clef de 4096 bits n’est absolument pas une contrainte. Le problème a été <a href="https://github.com/letsencrypt/letsencrypt/issues/489">officiellement soulevé</a> à Let’s Encrypt, qui a donné <a href="https://github.com/letsencrypt/letsencrypt/issues/489#issuecomment-153757615">une fin de non-recevoir</a>, arguant que 2048 était la configuration par défaut et que si on voulait plus, il fallait juste changer le fichier de configuration.</p>
+
+<p>De ce fait, il faut modifier la commande principale de génération du certificat :</p>
+
+<p><code class="highlighter-rouge">./letsencrypt-auto certonly  --rsa-key-size 4096</code></p>
+
+<h3 id="arrêt-de-production-ou-https-only-non-supporté">Arrêt de production ou HTTPS only non supporté</h3>
+
+<p>Ensuite, Let’s Encrypt, par défaut encore, réclame d’arrêter le serveur nginx pour valider la détention du domaine à signer. Il embarque en effet son propre serveur web pour échanger avec leur back-office (c’est de là que vient la simplicité de let’s encrypt), et il ne peut évidemment pas fonctionner si le nôtre est déjà en fonctionnement. C’est juste un comportement contraignant, personne ne souhaite arrêter sa production <a href="https://letsencrypt.org/2015/11/09/why-90-days.html">tous les 90 jours</a> (c’est encore une beta donc c’est normal aussi mais ça reste pénible) pour renouveler un certificat… Encore une fois, il est possible de contourner le problème via l’utilisation de la méthode _<a href="https://letsencrypt.readthedocs.org/en/latest/using.html#webroot">webroot</a> au lieu de la méthode par défaut <a href="https://letsencrypt.readthedocs.org/en/latest/using.html#standalone"><em>standalone</em></a>.</p>
+
+<h3 id="amélioration-nginx">Amélioration Nginx</h3>
+
+<p>Pour obtenir la meilleur note (A+) il faut faire quelques ajustements dans la config du bloc SSL de nginx. Il faut limiter la liste des protocoles SSL : <strong>TLSv1.2 TLSv1.1 TLSv1</strong> (on dit adieux aux vieux systèmes d’exploitation qui ne gèrent pas ces protocoles à un niveau de sécurité acceptable), ainsi que les ciphers.</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">server</span> <span class="err">{</span>  
+ <span class="err">listen</span> <span class="err">443</span> <span class="err">ssl</span> <span class="err">spdy</span><span class="c">; # Ajoutez SPDY ou http2 si vous avez le support d'une des deux fonctionnalités  
+</span> <span class="err">server_name</span> <span class="err">monsite.fr</span> <span class="err">www.monsite.fr</span><span class="c">;  
+</span> <span class="err">root</span> <span class="err">/var/www/dossier</span><span class="c">;  
+</span> <span class="err">index</span> <span class="err">index.html</span> <span class="err">index.htm</span> <span class="err">index.php</span><span class="c">;
+</span>
+<span class="err">add_header</span> <span class="err">Strict-Transport-Security</span> <span class="err">'</span><span class="py">max-age</span><span class="p">=</span><span class="s">31536000'; # pour le support de HSTS (voir après la config nginx)</span>
+
+<span class="err">ssl_protocols</span> <span class="err">TLSv1.2</span> <span class="err">TLSv1.1</span> <span class="err">TLSv1</span><span class="c">;  
+</span> <span class="err">ssl_certificate</span> <span class="err">/etc/letsencrypt/live/monsite.fr/fullchain.pem</span><span class="c">;  
+</span> <span class="err">ssl\_certificate\_key</span> <span class="err">/etc/letsencrypt/live/monsite.fr/privkey.pem</span><span class="c">;  
+</span> <span class="err">ssl\_prefer\_server_ciphers</span> <span class="err">on</span><span class="c">;  
+</span> <span class="err">ssl_ciphers</span> <span class="err">'kEECDH+ECDSA+AES128</span> <span class="err">kEECDH+ECDSA+AES256</span> <span class="err">kEECDH+AES128</span> <span class="err">kEECDH+AES256</span> <span class="err">kEDH+AES128</span> <span class="err">kEDH+AES256</span> <span class="err">+SHA</span> <span class="err">!aNULL</span> <span class="err">!eNULL</span> <span class="err">!LOW</span> <span class="err">!MD5</span> <span class="err">!EXP</span> <span class="err">!DSS</span> <span class="err">!PSK</span> <span class="err">!SRP</span> <span class="err">!kECDH</span> <span class="err">!CAMELLIA</span> <span class="err">!RC4</span> <span class="err">!SEED'</span><span class="c">;  
+</span> <span class="err">ssl\_session\_cache</span> <span class="err">shared:SSL:10m</span><span class="c">;  
+</span> <span class="err">ssl\_session\_timeout</span> <span class="err">10m</span><span class="c">;  
+</span> <span class="err">keepalive_timeout</span> <span class="err">70</span><span class="c">;
+</span>
+<span class="err">\</span><span class="nn">[...\]</span> <span class="c"># Reste de votre configuration (PHP, Directory, etc ...  
+</span> <span class="err">}</span>
+</code></pre></div></div>
+
+<p><a href="https://fr.wikipedia.org/wiki/HTTP_Strict_Transport_Security">HSTS / HTTP Strict Transport Security</a></p>
+
+<h3 id="le-cadenas-est-orange">Le cadenas est orange</h3>
+
+<p><img src="/content/images/2018/02/minor_chrome.png" alt="minor_chrome" /></p>
+
+<h3 id="premiers-retours-sur-lets-encrypt">Premiers retours sur Let’s Encrypt</h3>
+
+<p>Si le cadenas est orange (ou avec un warning) sur votre site, vérifiez les liens de vos images ou scripts, et utilisez le protocole <code class="highlighter-rouge">https://</code> ou bien utilisez <code class="highlighter-rouge">//</code> pour tous vos scripts et images.</p>
+
+<p>Merci à <a href="https://twitter.com/StosseFlorian">@StosseFlorian</a>  pour les indications et à <a href="https://twitter.com/blogdedada">@blogdedada</a> :</p>
+
+<blockquote>
+  <p><a href="https://twitter.com/vincfleurette">@vincfleurette</a> Tu as un guide pour sécuriser ça ici : <a href="https://t.co/7qh067dpf6">https://t.co/7qh067dpf6</a> il faut juste en générer des nouveaux et les filer à nginx</p>
+
+  <p>— Harvester (@StosseFlorian) <a href="https://twitter.com/StosseFlorian/status/682980910392852485">1 Janvier 2016</a></p>
+</blockquote>
+
+<blockquote>
+  <p><a href="https://twitter.com/vincfleurette">@vincfleurette</a> Au prochaine renouvellement de clé LE, pense aussi à en demander une de 4096 bits, et à avoir des DHparams de longueur égale</p>
+
+  <p>— Harvester (@StosseFlorian) <a href="https://twitter.com/StosseFlorian/status/682981163699441665">1 Janvier 2016</a></p>
+</blockquote>
+
+<p><strong>Soyez fiers ! Vous avez réussi à installer un certificat Let’s Encrypt sur votre serveur Nginx ! Si vous avez le moindre problème, question, n’hésitez pas à lire la documentation <a href="https://letsencrypt.readthedocs.org/en/latest/">disponible ici</a> ou bien d’en parler dans les commentaires ?</strong></p>
+
+<p><em>Image crédité à Fabio Lanari (Internet1.jpg by Rock1997 modified.) [<a href="http://www.gnu.org/copyleft/fdl.html">GFDL</a> ou <a href="https://creativecommons.org/licenses/by-sa/4.0-3.0-2.5-2.0-1.0">CC BY-SA 4.0-3.0-2.5-2.0-1.0</a>], <a href="https://commons.wikimedia.org/wiki/File%3AInternet2.jpg">via Wikimedia Commons</a></em></p>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+            
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/jasper2/assets/images/2017/11/SSF3Z4GN_400x400.jpg" alt="vfleurette" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/jasper2/author/vfleurette">Vincent Fleurette</a></h4>
+                                
+                                    <p>The professional publishing platform</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/jasper2/author/vfleurette">Read More</a>
+                        </div>
+                    
+                
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/jasper2/assets/images/2018/02/iMacProWallpaper.jpg)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; iServ &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/jasper2/tag/sysadmin/">Sysadmin</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/jasper2/introduction-docker">Introduction à Docker: première approche</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/jasper2/logs-unix-comment-les-consulter">Logs sous unix: comment les consulter ?</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/jasper2/htop">HTOP, le monitoring en couleurs</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/jasper2/tag/sysadmin/">
+                                
+                                    See all 13 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/jasper2/meteo-mondiale-dans-terminal">
+                <div class="post-card-image" style="background-image: url(/jasper2/https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=023f9101a0f755ddef4fc4572d7b91a2)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/jasper2/meteo-mondiale-dans-terminal">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Decouverte</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Météo mondiale dans votre terminal \ Tuto pour Linux/Mac</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    <p>## Les prévisions météo s’affichent aussi dans le terminal Pourquoi s’embarrasser d’une application dédiée, pourquoi même s’embêter à ouvrir un onglet dans un navigateur web pour obtenir la météo ? Alors que l’on</p>
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/jasper2/assets/images/2017/11/SSF3Z4GN_400x400.jpg" alt="Vincent Fleurette" />
+                        
+                        <span class="post-card-author">
+                            <a href="/jasper2/author/vfleurette/">Vincent Fleurette</a>
+                        </span>
+                    
+                
+                    
+                
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/jasper2/tuto-comment-installer-php-7-os-x-el-capitan">
+                <div class="post-card-image" style="background-image: url(/jasper2/https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=278085b2f7e71c40d0bd45a0e1fc06df)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/jasper2/tuto-comment-installer-php-7-os-x-el-capitan">
+                <header class="post-card-header">
+                    
+                        
+                            
+                               <span class="post-card-tags">Php</span>
+                            
+                        
+                            
+                                <span class="post-card-tags">Tuto</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Tuto Comment installer PHP 7 OS X El Capitan</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    <p>Dans ce court tutoriel, vous apprendrez comment installer la dernière version de PHP7 sur OS X en utilisant homebrew et comment le configurer dans le serveur Apache. Vous pourriez vous demander en premier</p>
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/jasper2/assets/images/2017/11/SSF3Z4GN_400x400.jpg" alt="Vincent Fleurette" />
+                        
+                        <span class="post-card-author">
+                            <a href="/jasper2/author/vfleurette/">Vincent Fleurette</a>
+                        </span>
+                    
+                
+                    
+                
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="/jasper2/">
+            
+                <img src="/jasper2/assets/images/2017/11/iServ.png" alt="iServ icon" />
+            
+            <span>iServ</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">Premiers retours sur Let's Encrypt</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Premiers+retours+sur+Let%27s+Encrypt&amp;url=https://iserv-fr.github.io/jasper2/premiers-retours-sur-lets-encrypt"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://iserv-fr.github.io/jasper2/premiers-retours-sur-lets-encrypt"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="/jasper2/">iServ</a> &copy; 2018</section>
+                <nav class="site-footer-nav">
+                    
+                    <a href="https://twitter.com/iservblog" target="_blank" rel="noopener">Twitter</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        type="text/javascript"
+        src="/jasper2/assets/js/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/jasper2/assets/js/jquery.fitvids.js"></script>
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/jasper2/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-120160977-1', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+    /*$('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });*/
+
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
