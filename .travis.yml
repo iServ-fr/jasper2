@@ -21,3 +21,14 @@ env:
 branches:
   only:
     - master
+   
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: public
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master
+  repo: iServ-fr/jasper2
+  target_branch: master
+  fqdn: www.iserv.fr
