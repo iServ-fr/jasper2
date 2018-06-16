@@ -8,6 +8,19 @@
     
       
       <item>
+        <title>Chrono-post &amp;#58; du, pour gérer le space disk</title>
+        
+          <description>La commande du (disk usage) permet d’afficher la taille d’un répertoire et de tous les sous répertoires qu’il contient, et ce de manière récursive...</description>
+        
+        <pubDate>Sat, 19 May 2018 18:49:59 +0000</pubDate>
+        <link>
+        /chrono-post-du-gerer-space-disk</link>
+        <guid isPermaLink="true">/chrono-post-du-gerer-space-disk</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Installation de SolR 6 sous CentOS</title>
         
           <description>&lt;p&gt;J’ai souvent utilisé le moteur d’indexation SolR (basé sur lucene) que ce soit pour mes développements ou en production. Nous allons installer la version 6 de SolR et en faire un service, pour que SolR soit plus facilement gérable en ligne de commande.&lt;/p&gt;

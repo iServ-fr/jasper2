@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-06-04T15:58:58+00:00</updated><id>/</id><title type="html">iServ</title><subtitle>Un blog Tech pour parler des découvertes, expériences, humeurs du moment autour du web et des technologies qui caractérisent ce serveur.</subtitle><entry><title type="html">Installation de SolR 6 sous CentOS</title><link href="/installation-de-solr6-sous-linux" rel="alternate" type="text/html" title="Installation de SolR 6 sous CentOS" /><published>2018-05-19T18:49:59+00:00</published><updated>2018-05-19T18:49:59+00:00</updated><id>/installation-de-solr6-sous-linux</id><content type="html" xml:base="/installation-de-solr6-sous-linux">&lt;p&gt;J’ai souvent utilisé le moteur d’indexation SolR (basé sur lucene) que ce soit pour mes développements ou en production. Nous allons installer la version 6 de SolR et en faire un service, pour que SolR soit plus facilement gérable en ligne de commande.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-06-16T14:52:25+00:00</updated><id>/</id><title type="html">iServ</title><subtitle>Un blog Tech pour parler des découvertes, expériences, humeurs du moment autour du web et des technologies qui caractérisent ce serveur.</subtitle><entry><title type="html">Chrono-post : du, pour gérer le space disk</title><link href="/chrono-post-du-gerer-space-disk" rel="alternate" type="text/html" title="Chrono-post &amp;#58; du, pour gérer le space disk" /><published>2018-05-19T18:49:59+00:00</published><updated>2018-05-19T18:49:59+00:00</updated><id>/chrono-post-du-gerer-space-disk</id><content type="html" xml:base="/chrono-post-du-gerer-space-disk">&lt;p&gt;Bonjour à tous,&lt;/p&gt;
+
+&lt;p&gt;Tout d’abord, un mot pour vous expliquer le terme Chrono-post (non, il ne s’agit pas d’une reconversion d’iServ dans le transport de colis, même si ça pourrait être sympa, mais trop d’infrastructure à mettre en place, de choses à prévoir, mais je digresse). Le concept est simple, il s’agit de posts qui seront concis et qui ne traiteront que d’une seule thématique.&lt;/p&gt;
+
+&lt;p&gt;Aujourd’hui, nous allons étudier une commande unix qui sert à la gestion d’espace sur votre disque dur (que ce soit sur votre poste ou un serveur).&lt;/p&gt;
+
+&lt;h2 id=&quot;la-commande-du&quot;&gt;La commande &lt;em&gt;du&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;La commande &lt;strong&gt;du&lt;/strong&gt; (disk usage) permet d’afficher la taille d’un répertoire et de tous les sous répertoires qu’il contient, et ce de manière récursive.
+Pas besoin d’être sur une distribution Linux, voici un petit exemple sous Mac et cela fonctionne très bien ;)&lt;/p&gt;
+
+&lt;p&gt;Cette commande peut être très pratique pour la gestion de serveur et la recherche des fichiers et/ou répertoires qui occupent le plus de place, afin de libérer de l’espace disque (surtout quand vous remarquez qu’une de vos partitions sur le serveur est à 100%, non c’est pas du vécu :D ).&lt;/p&gt;
+
+&lt;figure class=&quot;kg-image-card&quot;&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/images/2018/05/Capture-d-e-cran-2018-05-27-a--22.22.08.png&quot; alt=&quot;Sous mac aussi&quot; /&gt;&lt;/p&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Deux options dont je me sers souvent:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;-h qui correspond à human readable&lt;/li&gt;
+  &lt;li&gt;-s qui permet de ne voir que le total du dossier qui est en argument. A noter que par défaut, il s’agit du dossier courant (taper &lt;code class=&quot;highlighter-rouge&quot;&gt;du&lt;/code&gt; revient au même que de taper &lt;code class=&quot;highlighter-rouge&quot;&gt;du .&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pour aller plus loin, je vous invite à étudier directement le &lt;a href=&quot;http://www.linux-france.org/article/man-fr/man1/du-1.html&quot;&gt;man de la commande &lt;em&gt;du&lt;/em&gt;&lt;/a&gt; sur le net (attention au fond turquoise) ou tout simplement à taper &lt;code class=&quot;highlighter-rouge&quot;&gt;du&lt;/code&gt; dans votre invite de commande.&lt;/p&gt;
+
+&lt;p&gt;Merci d’avoir suivi ce premier chrono-post et à très bientôt pour le prochain qui portera sur la commande &lt;strong&gt;df&lt;/strong&gt; !&lt;/p&gt;
+
+&lt;p&gt;Image de couverture créditée à &lt;a href=&quot;https://en.wikipedia.org/wiki/User:Vidarlo&quot;&gt;Vidarlo&lt;/a&gt;, &lt;a title=&quot;Vidarlo at the English language Wikipedia [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0/)], via Wikimedia Commons&quot; href=&quot;https://commons.wikimedia.org/wiki/File:Xterm.png&quot;&gt;via Wikimedia Commons&lt;/a&gt;&lt;/p&gt;</content><author><name>Sébastien Chaptal</name></author><category term="tuto" /><summary type="html">La commande du (disk usage) permet d’afficher la taille d’un répertoire et de tous les sous répertoires qu’il contient, et ce de manière récursive...</summary></entry><entry><title type="html">Installation de SolR 6 sous CentOS</title><link href="/installation-de-solr6-sous-linux" rel="alternate" type="text/html" title="Installation de SolR 6 sous CentOS" /><published>2018-05-19T18:49:59+00:00</published><updated>2018-05-19T18:49:59+00:00</updated><id>/installation-de-solr6-sous-linux</id><content type="html" xml:base="/installation-de-solr6-sous-linux">&lt;p&gt;J’ai souvent utilisé le moteur d’indexation SolR (basé sur lucene) que ce soit pour mes développements ou en production. Nous allons installer la version 6 de SolR et en faire un service, pour que SolR soit plus facilement gérable en ligne de commande.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;J’ai hésité à publier cet article, car SolR en est à sa version 7 mais j’ai constaté que la version 6 intéresse et est toujours utilisée dans beaucoup de projets.&lt;/p&gt;
@@ -617,57 +645,4 @@ La reconstitution historique fidèle dans les jeux vidéo, les clichés que l’
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;“History’s Creed’, la mini-série en 10 épisodes à regarder sur &lt;a href=&quot;https://www.arte.tv/fr/videos/RC-014308/history-s-creed/&quot;&gt;Arte&lt;/a&gt;.
-Elle est également disponible sur &lt;a href=&quot;https://www.youtube.com/watch?v=e5vG-7lzHWU&amp;amp;list=PLgLm3t2YjNL2LvpXMliEdJy60hkC2c-4u&quot;&gt;la chaine Youtube de Nota Bene&lt;/a&gt;.&lt;/p&gt;</content><author><name>Sébastien Chaptal</name></author><category term="societe" /><summary type="html">Aujourd’hui, un article un peu différent. En effet, il s’agit d’un partenariat entre Arte Creative et le vulgarisateur/youtubeur en Histoire, Nota Bene.</summary></entry><entry><title type="html">Logs sous unix: comment les consulter ?</title><link href="/logs-unix-comment-les-consulter" rel="alternate" type="text/html" title="Logs sous unix: comment les consulter ?" /><published>2018-03-08T13:27:16+00:00</published><updated>2018-03-08T13:27:16+00:00</updated><id>/logs-unix-comment-les-consulter</id><content type="html" xml:base="/logs-unix-comment-les-consulter">&lt;p&gt;Il est probable que dans votre vie d’informaticien, vous devrez étudier des fichiers de logs, qu’ils viennent du système ou de vos applications. 
-Après tout, ils sont là pour une raison très importante … pour vous aider à résoudre un problème. 
-En fait, chaque administrateur (ou développeur aussi ^^) chevronné vous demandera immédiatement en cas de problème: “&lt;em&gt;y a marqué quoi dans les logs ?&lt;/em&gt;”.&lt;/p&gt;
-
-&lt;p&gt;Il existe des logs pour tout: des logs system, pour le kernel, pour Apache, pour MySQL, etc. Pour chaque logiciel, application, service, il y a un fichier de log.&lt;/p&gt;
-
-&lt;h4 id=&quot;où-trouver-ces-fichiers-de-logs-&quot;&gt;Où trouver ces fichiers de logs ?&lt;/h4&gt;
-&lt;p&gt;Les logs system et les logs des services (apache, mariadb, …) sont dans le dossier /var/log sous unix. Les logs des applications se trouvent à des dossiers différents/personnalisés et cela dépend des applications elles-mêmes.&lt;/p&gt;
-
-&lt;p&gt;Nous allons voir maintenant comment visualiser les logs.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;La suite de cet article sera concentré sur différentes manières d’afficher des logs sous linux (ou MacOS). Bien entendu, il ne s’agit pas d’une liste exhaustive. Il y a beaucoup de manières différentes de les visualiser. Je vais vous montrer les principaux que j’ai rencontré au cours de mes périgrinations.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;grep&quot;&gt;grep&lt;/h2&gt;
-&lt;p&gt;Il s’agit d’une commande pour faire une recherche. En effet, il est possible de ne pas savoir exactement dans quel fichier se trouve l’information qui nous interresse. La plupart du temps, les developpeurs mettent certains mots clés pour spécifier une erreur. On pourra s’en servir pour trouver notre information (en se servant par exemple d’un code d’indentification pour une erreur).&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Trouver dans quels fichiers de logs se trouve le code “errlog404” (avec les options -r  pour récursive, -i  pour insensible à la “casse”, -l  pour n’avoir que les noms des fichiers)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grep -r -i -l 'errlog404' /var/log/&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;tail--f-ou-tailf&quot;&gt;tail -f ou tailf&lt;/h2&gt;
-
-&lt;p&gt;tail est une commande qui permet d’afficher les dernières lignes de texte d’un fichier.
-L’option -f permet à un fichier d’être surveillé. Au lieu d’afficher les dernières lignes et de quitter, tail affiche les dernières lignes et surveille le fichier. Quand des nouvelles lignes sont ajoutées au fichier par un autre processus, tail met à jour l’affichage. C’est particulièrement utile pour surveiller des fichiers de logs.&lt;/p&gt;
-
-&lt;p&gt;L’option -n permet d’afficher les n dernières lignes
-&lt;code class=&quot;highlighter-rouge&quot;&gt;tail -n 20 'monfichierdelog'&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Bien entendu, on peut combiner plusieurs options:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;tail -f -n 100 'heureusementilyadeslogs'&lt;/code&gt;
-ou
-&lt;code class=&quot;highlighter-rouge&quot;&gt;tailf -n 100 'heureusementilyadeslogs'&lt;/code&gt;
-(si tailf est installé)&lt;/p&gt;
-
-&lt;h2 id=&quot;less&quot;&gt;less&lt;/h2&gt;
-
-&lt;p&gt;Si on reprend la définition de &lt;a href=&quot;https://fr.wikipedia.org/wiki/Less_(Unix)&quot;&gt;wikipedia&lt;/a&gt;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;less est une commande Unix permettant de visualiser un fichier texte page par page (sans le modifier). Sa fonction est similaire à la commande more, mais permet en plus de revenir en arrière ou de rechercher une chaîne. Contrairement à vi (qui permet aussi de visualiser des fichiers), &lt;strong&gt;less n’a pas besoin de charger entièrement le fichier en mémoire et s’ouvre donc très rapidement même pour consulter de gros fichiers.&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;C’est un sacré avantage pour des fichiers de logs qui peuvent être conséquent (plusieurs Go ou +)  :)&lt;/p&gt;
-
-&lt;p&gt;De plus, l’option +F de less est vraiment utile:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;less +F /var/log/messages&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Vous allez pouvoir voir en temps réel le fichier (comme pour tail -f).
-Par contre, en faisant un ctrl+c, vous allez pouvoir naviguer dans le fichier. Pour revenir à la vue en temps réel, vous n’avez qu’à refaire maj + f (pour faire un F majuscule).&lt;/p&gt;
-
-&lt;h3 id=&quot;inconvénient-par-rapport-à-tail--f&quot;&gt;Inconvénient par rapport à tail -f:&lt;/h3&gt;
-&lt;p&gt;less ne permet de suivre qu’un fichier en temps réel à la fois, contrairement à tail -f qui permet l’affichage de plusieurs fichiers en même temps et qui spécifie à quel fichier appartient les lignes nouvellement apparues.&lt;/p&gt;</content><author><name>Sébastien Chaptal</name></author><category term="sysadmin" /><category term="tuto" /><summary type="html">Il est probable que dans votre vie d’informaticien, vous devrez étudier des fichiers de logs, qu’ils viennent du système ou de vos applications. Après tout, ils sont là pour une raison très importante … pour vous aider à résoudre un problème. En fait, chaque administrateur (ou développeur aussi ^^) chevronné vous demandera immédiatement en cas de problème: “y a marqué quoi dans les logs ?”.</summary></entry></feed>
+Elle est également disponible sur &lt;a href=&quot;https://www.youtube.com/watch?v=e5vG-7lzHWU&amp;amp;list=PLgLm3t2YjNL2LvpXMliEdJy60hkC2c-4u&quot;&gt;la chaine Youtube de Nota Bene&lt;/a&gt;.&lt;/p&gt;</content><author><name>Sébastien Chaptal</name></author><category term="societe" /><summary type="html">Aujourd’hui, un article un peu différent. En effet, il s’agit d’un partenariat entre Arte Creative et le vulgarisateur/youtubeur en Histoire, Nota Bene.</summary></entry></feed>
