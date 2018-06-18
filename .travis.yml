@@ -19,8 +19,6 @@ env:
   global:
     secure: "f1Eb98PhsoNOEtHPAmIEXs3EjNcsNEAs5llrb5YNzwmFqSj/V2x9eQ9ljcwCouHot9LVkC6IEsmQg7zEN7a6d/wbiaHHnGmZUYb90FYbDrfjSQk3hjD977rW/ww2f+rJo1SNzPhFGzpgVOOMJN5YYLJb9/mQ5h86nWf+oUagRZeR0gzCLkobT5w1I31cJZM2kx+FofiTiiO93i1TbTAQc87Tdhvfx5iQAjHxR8xBl4RtX1gKFNonV3gFmpIDA5A2R4LajpwtdRQuqS9p50v9kdyETYZ5lZO0uFVqs7c8Jt/9EYkpzlViZOzkiOYI6fkU395uxKuZBu4tPaw6TrwxuLs7ZFqNokSb6vW/NLoRrr4pmygIzROsxsXQrjf7PBBkkd0b5eCkPXcn96/W26eSaGvFvGbxl1ZbLjyH/ukmdDlQHB+6LgAri0RpyTLmQk7JtNcVZNN+cV1CcWagsWMyEmJlIWdSiqdfryAPAEo7wSrA3kAFMr1gA8WGYvl8PsKGouqYSCfPKnNh9EHCZ1CJkjubaDFAbmx4Mxe3AM/RgUNn6K92Ymw9/g07dSIaT6jTouJ8l/bZIKyNGWODH/cv2vcMJRee5t5m+73Cs7iXJVMnE4wPdyt9HAunB2YE/DeL6o+1CtzWA3ZJeXdU64V7B2lvp6HVNdJtK1RtX82NHrA="
     fqdn: www.iserv.fr
-    provider: pages
-    skip_cleanup: true
 
 branches:
   only:
