@@ -14,7 +14,7 @@ logo: assets/images/2018/02/iServ_w-1.png
 logo_dark: assets/images/2017/11/iServ.png
 favicon: assets/images/2017/11/iServ_square_ublue.png
 production_url: https://www.iserv.fr
-source_url: https://www.iserv.fr
+source_url: https://github.com/iServ-fr/jasper2/
 
 # Social info
 navigation: True # show the navbar links
@@ -71,7 +71,7 @@ branch: master
 relative_source: ../jasper2/
 destination: ../jasper2-pages/
 production_url:  https://www.iserv.fr/
-source_url:  https://www.iserv.fr
+source_url:  https://github.com/iServ-fr/jasper2/
 
 exclude:
   - assets/css
