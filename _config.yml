@@ -63,15 +63,6 @@ feed:
 # repo defaults to USERNAME.github.io
 # Branch defaults to "source" for USERNAME.github.io
 # or "master" otherwise
-safe: False
-lsi: False
-username: iServ-fr
-repo: jasper2
-branch: master
-relative_source: ../jasper2/
-destination: ../jasper2-pages/
-production_url:  https://www.iserv.fr/
-source_url:  https://github.com/iServ-fr/jasper2/
 
 exclude:
   - assets/css
