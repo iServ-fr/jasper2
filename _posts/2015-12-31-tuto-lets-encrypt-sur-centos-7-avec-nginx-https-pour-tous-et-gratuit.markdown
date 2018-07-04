@@ -8,7 +8,7 @@ tags:
 navigation: True
 layout: post
 current: post
-cover: assets/images/2018/02/lets-encrypt-1.jpg
+cover: assets/images/2018/02/lets-encrypt.jpg
 unsplash: false
 navigation: True
 class: post-template
