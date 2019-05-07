@@ -15,11 +15,11 @@ author: vfleurette
 
 _Cette critique est garantie sans spoils de ce dernier épisode._
 
-Trente-deux ans après les événements du « [**Retour du Jedi**](http://www.cine-loisirs.fr/film/star-wars-episode-vi-le-retour-du-jedi-200424) », l’Empire a cédé sa place au Premier Ordre, et la résistance peine à tenir tête au coté obscur, même avec le soutien de la République, dont l’exil de Luke ne fait que compliquer la tâche.
+Trente-deux ans après les événements du « [**Retour du Jedi**](http://www.cinemur.fr/film/star-wars-episode-vi-le-retour-du-jedi-200424) », l’Empire a cédé sa place au Premier Ordre, et la résistance peine à tenir tête au coté obscur, même avec le soutien de la République, dont l’exil de Luke ne fait que compliquer la tâche.
 
 ![Star Wars falcon](https://media.giphy.com/media/ZSdHRkDjdcqjK/giphy.gif)
 
-« Star Wars VII Le Réveil de la Force », ou le film le plus attendu de cette fin d’année, réalisé par le non moins controversé [J.J Abrams](http://www.cine-loisirs.fr/personnes/j-j-abrams-14794), un habitué de la science-fiction car réalisateur des deux derniers « [Star Trek](http://www.cine-loisirs.fr/film/star-trek-217089) », et surtout connu pour son amour irraisonnable des lenses flares, qui ne sont pas nombreux dans ce Star Wars.
+« Star Wars VII Le Réveil de la Force », ou le film le plus attendu de cette fin d’année, réalisé par le non moins controversé [J.J Abrams](https://www.cinemur.fr/personnes/j-j-abrams-14794), un habitué de la science-fiction car réalisateur des deux derniers « [Star Trek](http://www.cinemur.fr/film/star-trek-217089) », et surtout connu pour son amour irraisonnable des lenses flares, qui ne sont pas nombreux dans ce Star Wars.
 
 Passons à la question que tout fan se pose, ce Star Wars est-il à la hauteur des attentes ? Et la réponse est non. 
 Non pas que ce septième épisode soit un mauvais film, bien loin de là, mais il est tout simplement impossible de répondre aux exigences des fans de la saga, après trente-deux années passées à étoffer l’univers Star Wars. Et ce, via les divers livres, jeux, bandes dessinés et courts-métrages des fans, dont le film fait complètement abstraction, afin de poser sa propre vision de l’univers Star Wars.
@@ -38,7 +38,7 @@ Mais le plus gros point noir de ce film est bel et bien le personnage de Kylo Re
 
 De ce fait, faut-il aller voir Star Wars VII ? La réponse à cette question est **oui**, car bien que le film ne soit pas exempt de défauts, il comporte tout de même de nombreuses qualités non négligeables, qui même si elles ne feront pas remonter le fan de Star Wars de vos premiers visionnages, sans doute à cause du manque de scènes réellement cultes, enrichie et renouvellant suffisamment l’univers de la saga pour que ce nouvel opus en vaille le coup. Le rachat de la licence par Disney laissait vraiment augurer du pire. Et j'avais tort. Dès les premières images et le texte qui défile à l'horizontale sur l'écran géant, dès que les premières notes ont retenti, la magie a opéré immédiatement. Mais évidemment ce n'était pas suffisant et il fallait que J.J. Abrams réussisse quand même à capter l'attention pendant 2 heures 20. Pari tenu, gagné en ce qui me concerne. Pas un instant d'ennui, c'est une presque totale réussite.
 
-![bb8 Star Wars](http://www.surlarouteducinema.com/media/01/01/4188224809.gif)
+![bb8 Star Wars](https://media.giphy.com/media/kbUq8z1MEYQ7u/giphy.gif)
 
 J'ai entendu les anti-star wars proférer cet argument imparable : "_je n'en ai strictement rien à faire de Star Wars"_ . Ok, t'énerve pas gros ! Et la botte secrète, l'estocade finale : "_il y a des choses plus importantes dans la vie que Star Wars_ !" Eueueuh, oui, je suis d'accord, et à 1 000 % même, mais purée que c'est bon !!!
 
